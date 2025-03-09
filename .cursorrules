@@ -1,0 +1,37 @@
+# Cursor Rules
+
+## ⚠️ MANDATORY PRE-IMPLEMENTATION CHECKLIST ⚠️
+STOP! Before writing ANY code or suggesting ANY changes:
+
+1. 🔍 SEARCH FIRST:
+   ```bash
+   # REQUIRED: Run these searches and document results
+   grep_search for functionality
+   file_search for similar files
+   list_dir in relevant directories
+   ```
+
+2. 📝 DOCUMENT FINDINGS:
+   ```markdown
+   # REQUIRED: Fill this out
+   ## Existing Files Found:
+   - [List all relevant files found]
+   
+   ## Existing Functionality:
+   - [Describe what already exists]
+   
+   ## Gaps Identified:
+   - [List what's missing or needs enhancement]
+   
+   ## Proposed Approach:
+   - [ ] Enhance existing code
+   - [ ] Create new files (requires justification)
+   - [ ] Refactor existing code
+   ```
+
+3. ✋ WAIT FOR APPROVAL:
+   - Present findings to user
+   - Get explicit approval for approach
+   - Never proceed with new files if similar functionality exists
+
+❌ IF YOU SKIP THIS CHECKLIST, YOU ARE VIOLATING THE MOST IMPORTANT RULE ❌

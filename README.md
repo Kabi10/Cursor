@@ -4,7 +4,7 @@
 
 ## 🚀 Supercharge Your Development Workflow with Cursor AI Templates
 
-This repository contains a collection of specialized templates for [Cursor](https://cursor.sh/), the AI-first code editor. These templates help you establish consistent workflows, enforce best practices, and maximize the effectiveness of AI assistance in your development process.
+This repository contains a collection of specialized templates and helpful files for [Cursor](https://cursor.sh/), the AI-first code editor. These templates help you establish consistent workflows, enforce best practices, and maximize the effectiveness of AI assistance in your development process.
 
 ## 📋 What's Inside
 
@@ -104,4 +104,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-Happy coding with Cursor AI! 🚀 
+Happy coding with Cursor AI! 🚀
