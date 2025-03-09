@@ -1,0 +1,247 @@
+# Entertainment & Streaming Website Rules for AI Code Builders
+
+## ⚠️ MANDATORY PRE-IMPLEMENTATION CHECKLIST ⚠️
+
+1. 🎬 STREAMING REQUIREMENTS VALIDATION
+   - [ ] Define content types
+   - [ ] Plan streaming quality tiers
+   - [ ] Identify user roles
+   - [ ] List playback features
+   - [ ] Document DRM requirements
+
+2. 📱 RESPONSIVE DESIGN REQUIREMENTS
+   - [ ] Desktop (1920px, 1440px, 1280px)
+   - [ ] Tablet (1024px, 768px)
+   - [ ] Mobile (428px, 375px, 320px)
+   - [ ] Smart TV support
+
+3. 🎯 CORE FEATURES CHECKLIST
+   - [ ] Content catalog
+   - [ ] Video player
+   - [ ] User profiles
+   - [ ] Recommendations
+   - [ ] Search functionality
+   - [ ] Watchlist
+   - [ ] Continue watching
+   - [ ] Subscription management
+
+## 🏗️ Architecture Guidelines
+
+### Component Structure
+```
+src/
+├── components/
+│   ├── layout/
+│   │   ├── Header.tsx
+│   │   ├── Footer.tsx
+│   │   └── Navigation.tsx
+│   ├── player/
+│   │   ├── VideoPlayer.tsx
+│   │   ├── Controls.tsx
+│   │   ├── Quality.tsx
+│   │   └── Subtitles.tsx
+│   ├── catalog/
+│   │   ├── ContentCard.tsx
+│   │   ├── ContentGrid.tsx
+│   │   ├── Categories.tsx
+│   │   └── Filters.tsx
+│   ├── user/
+│   │   ├── Profile.tsx
+│   │   ├── Watchlist.tsx
+│   │   └── History.tsx
+│   ├── subscription/
+│   │   ├── Plans.tsx
+│   │   ├── Payment.tsx
+│   │   └── Benefits.tsx
+│   └── common/
+│       ├── SearchBar.tsx
+│       ├── Recommendations.tsx
+│       └── Notifications.tsx
+├── pages/
+│   ├── browse/
+│   ├── watch/
+│   ├── profile/
+│   └── account/
+└── styles/
+    └── theme/
+```
+
+### Streaming Requirements
+1. **Video Quality**
+   - 4K (2160p)
+   - Full HD (1080p)
+   - HD (720p)
+   - SD (480p)
+   - Adaptive bitrate
+
+2. **Audio Quality**
+   - Dolby Digital
+   - Stereo
+   - Multiple languages
+   - Audio description
+
+3. **Playback Features**
+   - Autoplay
+   - Skip intro
+   - Next episode
+   - Playback speed
+   - Quality selection
+
+## 📊 Performance Requirements
+
+1. **Streaming Performance**
+   - Buffer management
+   - Quality adaptation
+   - Network optimization
+   - CDN integration
+
+2. **Content Loading**
+   - Thumbnail optimization
+   - Lazy loading
+   - Preloading
+   - Caching strategy
+
+3. **Application Performance**
+   - Quick start
+   - Smooth navigation
+   - Background loading
+   - Memory management
+
+## 🎥 Player Requirements
+
+1. **Core Features**
+   - Custom controls
+   - Progress bar
+   - Quality selector
+   - Subtitle support
+   - Picture-in-picture
+
+2. **Advanced Features**
+   - DRM support
+   - Analytics tracking
+   - Error recovery
+   - Offline playback
+
+## 📱 Device Support
+
+1. **Multi-platform**
+   - Web browsers
+   - Mobile devices
+   - Smart TVs
+   - Gaming consoles
+
+2. **Device Features**
+   - Device detection
+   - Capability check
+   - Adaptive UI
+   - Platform APIs
+
+## 🔄 Implementation Process
+
+1. **Setup Phase**
+   - [ ] CDN setup
+   - [ ] DRM integration
+   - [ ] Player development
+   - [ ] Analytics setup
+
+2. **Core Features**
+   - [ ] Content catalog
+   - [ ] Video playback
+   - [ ] User profiles
+   - [ ] Search system
+
+3. **Enhanced Features**
+   - [ ] Recommendations
+   - [ ] Watchlist
+   - [ ] Continue watching
+   - [ ] Social features
+
+4. **Platform Support**
+   - [ ] Mobile apps
+   - [ ] TV apps
+   - [ ] Console apps
+   - [ ] Cross-platform sync
+
+## 📈 Analytics Integration
+
+1. **Playback Analytics**
+   - Watch time
+   - Quality metrics
+   - Buffer events
+   - Error tracking
+
+2. **User Analytics**
+   - Viewing habits
+   - Content preferences
+   - Device usage
+   - Subscription data
+
+## 🔍 Quality Assurance
+
+1. **Streaming Quality**
+   - Playback testing
+   - Network conditions
+   - Device compatibility
+   - DRM validation
+
+2. **Application Quality**
+   - Performance testing
+   - Cross-platform testing
+   - Security testing
+   - Load testing
+
+## 📝 Documentation Requirements
+
+1. **Technical Documentation**
+   - Player integration
+   - DRM setup
+   - API documentation
+   - Deployment guide
+
+2. **User Documentation**
+   - Help center
+   - FAQs
+   - Troubleshooting
+   - Device support
+
+## 🔐 Security Requirements
+
+1. **Content Security**
+   - DRM implementation
+   - Copy protection
+   - Geo-restriction
+   - Access control
+
+2. **User Security**
+   - Authentication
+   - Payment security
+   - Data protection
+   - Session management
+
+## 💰 Monetization Features
+
+1. **Subscription Plans**
+   - Tier management
+   - Payment processing
+   - Trial periods
+   - Family sharing
+
+2. **Revenue Optimization**
+   - Upsell opportunities
+   - Retention strategies
+   - Churn prevention
+   - Analytics tracking
+
+## 🎯 Personalization
+
+1. **User Preferences**
+   - Viewing history
+   - Content preferences
+   - Language settings
+   - Playback settings
+
+2. **Recommendations**
+   - Content discovery
+   - Personalized lists
+   - Similar content
+   - Trending content 

@@ -1,0 +1,260 @@
+# Web Applications & SaaS Platform Rules for AI Code Builders
+
+## ⚠️ MANDATORY PRE-IMPLEMENTATION CHECKLIST ⚠️
+
+1. 🚀 SAAS REQUIREMENTS VALIDATION
+   - [ ] Define core features
+   - [ ] Plan subscription tiers
+   - [ ] Identify user roles
+   - [ ] List integration needs
+   - [ ] Document scalability requirements
+
+2. 📱 RESPONSIVE DESIGN REQUIREMENTS
+   - [ ] Desktop (1920px, 1440px, 1280px)
+   - [ ] Tablet (1024px, 768px)
+   - [ ] Mobile (428px, 375px, 320px)
+   - [ ] Progressive Web App support
+
+3. 🎯 CORE FEATURES CHECKLIST
+   - [ ] User authentication
+   - [ ] Dashboard interface
+   - [ ] Subscription management
+   - [ ] Feature access control
+   - [ ] Data management
+   - [ ] API integration
+   - [ ] Analytics tracking
+   - [ ] Team collaboration
+
+## 🏗️ Architecture Guidelines
+
+### Component Structure
+```
+src/
+├── components/
+│   ├── layout/
+│   │   ├── Header.tsx
+│   │   ├── Footer.tsx
+│   │   └── Navigation.tsx
+│   ├── dashboard/
+│   │   ├── Overview.tsx
+│   │   ├── Widgets.tsx
+│   │   ├── Analytics.tsx
+│   │   └── Settings.tsx
+│   ├── auth/
+│   │   ├── Login.tsx
+│   │   ├── Register.tsx
+│   │   └── ResetPassword.tsx
+│   ├── subscription/
+│   │   ├── Plans.tsx
+│   │   ├── Billing.tsx
+│   │   └── Usage.tsx
+│   ├── team/
+│   │   ├── Members.tsx
+│   │   ├── Roles.tsx
+│   │   └── Permissions.tsx
+│   └── common/
+│       ├── DataTable.tsx
+│       ├── Forms.tsx
+│       └── Notifications.tsx
+├── pages/
+│   ├── dashboard/
+│   ├── settings/
+│   ├── billing/
+│   └── admin/
+└── styles/
+    └── theme/
+```
+
+### Application Structure
+1. **Core Modules**
+   - Authentication system
+   - User management
+   - Subscription handling
+   - Feature management
+   - API integration
+
+2. **Data Management**
+   - Database schema
+   - API endpoints
+   - Data validation
+   - Error handling
+   - Caching strategy
+
+3. **Integration Points**
+   - Payment gateway
+   - Email service
+   - Analytics tools
+   - Third-party APIs
+   - Webhook system
+
+## 📊 Performance Requirements
+
+1. **Application Speed**
+   - Initial load < 2s
+   - API response < 200ms
+   - Real-time updates
+   - Background processing
+
+2. **Scalability**
+   - Horizontal scaling
+   - Load balancing
+   - Database optimization
+   - Caching layers
+
+3. **Resource Management**
+   - Memory usage
+   - CPU utilization
+   - Storage efficiency
+   - Network optimization
+
+## 🔒 Security Requirements
+
+1. **Authentication**
+   - Multi-factor auth
+   - SSO integration
+   - Session management
+   - Password policies
+
+2. **Data Security**
+   - Encryption at rest
+   - Encryption in transit
+   - Access control
+   - Audit logging
+
+## 📱 User Experience
+
+1. **Dashboard Design**
+   - Intuitive layout
+   - Quick actions
+   - Data visualization
+   - Customization options
+
+2. **Workflow Optimization**
+   - Task automation
+   - Batch operations
+   - Keyboard shortcuts
+   - Context menus
+
+## 🔄 Implementation Process
+
+1. **Setup Phase**
+   - [ ] Infrastructure setup
+   - [ ] CI/CD pipeline
+   - [ ] Monitoring tools
+   - [ ] Security measures
+
+2. **Core Development**
+   - [ ] Authentication system
+   - [ ] Database structure
+   - [ ] API development
+   - [ ] UI components
+
+3. **Feature Implementation**
+   - [ ] Subscription system
+   - [ ] Team management
+   - [ ] Integration points
+   - [ ] Analytics setup
+
+4. **Enhancement Phase**
+   - [ ] Performance optimization
+   - [ ] Security hardening
+   - [ ] Feature expansion
+   - [ ] Scale testing
+
+## 📈 Analytics Integration
+
+1. **Usage Analytics**
+   - Feature usage
+   - User behavior
+   - Performance metrics
+   - Error tracking
+
+2. **Business Metrics**
+   - MRR tracking
+   - Churn analysis
+   - User growth
+   - Feature adoption
+
+## 🔍 Quality Assurance
+
+1. **Testing Strategy**
+   - Unit testing
+   - Integration testing
+   - E2E testing
+   - Load testing
+
+2. **Monitoring**
+   - Error tracking
+   - Performance monitoring
+   - Usage monitoring
+   - Security scanning
+
+## 📝 Documentation Requirements
+
+1. **Technical Documentation**
+   - API documentation
+   - Architecture overview
+   - Integration guides
+   - Deployment process
+
+2. **User Documentation**
+   - User guides
+   - API references
+   - Feature documentation
+   - Troubleshooting guides
+
+## 🚀 Scaling Strategy
+
+1. **Infrastructure**
+   - Container orchestration
+   - Microservices
+   - Database sharding
+   - CDN implementation
+
+2. **Application**
+   - Code optimization
+   - Cache strategy
+   - Query optimization
+   - Asset management
+
+## 💰 Monetization Features
+
+1. **Subscription Management**
+   - Plan configuration
+   - Usage tracking
+   - Billing system
+   - Payment processing
+
+2. **Revenue Optimization**
+   - Upgrade paths
+   - Feature gating
+   - Usage analytics
+   - Pricing strategy
+
+## 🤝 Integration Capabilities
+
+1. **API Development**
+   - RESTful endpoints
+   - GraphQL support
+   - Webhook system
+   - SDK development
+
+2. **Third-party Integration**
+   - Authentication providers
+   - Payment gateways
+   - Email services
+   - Analytics platforms
+
+## 🔐 Compliance Requirements
+
+1. **Data Protection**
+   - GDPR compliance
+   - Data retention
+   - Privacy controls
+   - Export capabilities
+
+2. **Security Standards**
+   - SOC 2 compliance
+   - PCI compliance
+   - Security audits
+   - Vulnerability scanning 

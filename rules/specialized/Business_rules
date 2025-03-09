@@ -1,0 +1,185 @@
+# Business Website Rules for AI Code Builders
+
+## ⚠️ MANDATORY PRE-IMPLEMENTATION CHECKLIST ⚠️
+
+1. 🔍 BUSINESS REQUIREMENTS VALIDATION
+   - [ ] Verify business goals and objectives
+   - [ ] Identify key services and offerings
+   - [ ] Define target audience personas
+   - [ ] List required contact/inquiry forms
+   - [ ] Document compliance requirements
+
+2. 📱 RESPONSIVE DESIGN REQUIREMENTS
+   - [ ] Desktop (1920px, 1440px, 1280px)
+   - [ ] Tablet (1024px, 768px)
+   - [ ] Mobile (428px, 375px, 320px)
+   - [ ] Print stylesheet for resources
+
+3. 🎯 CORE FEATURES CHECKLIST
+   - [ ] Service pages with detailed descriptions
+   - [ ] Team/About section with credentials
+   - [ ] Case studies/Success stories
+   - [ ] Contact forms with validation
+   - [ ] Professional blog/insights section
+   - [ ] Client testimonials
+   - [ ] Call-to-action elements
+
+## 🏗️ Architecture Guidelines
+
+### Component Structure
+```
+src/
+├── components/
+│   ├── layout/
+│   │   ├── Header.tsx
+│   │   ├── Footer.tsx
+│   │   └── Navigation.tsx
+│   ├── services/
+│   │   ├── ServiceCard.tsx
+│   │   └── ServiceGrid.tsx
+│   ├── team/
+│   │   ├── TeamMember.tsx
+│   │   └── TeamGrid.tsx
+│   └── common/
+│       ├── CTAButton.tsx
+│       └── ContactForm.tsx
+├── pages/
+│   ├── services/
+│   ├── about/
+│   ├── contact/
+│   └── blog/
+└── styles/
+    └── theme/
+```
+
+### Design Patterns
+1. **Professional Typography**
+   - Primary: [Serif font] for headlines
+   - Secondary: [Sans-serif] for body text
+   - Font sizes: 16px base, scale ratio 1.2
+
+2. **Color Scheme**
+   - Primary: Corporate brand color
+   - Secondary: Complementary professional tone
+   - Accent: Call-to-action highlights
+   - Neutral: Grays for text and backgrounds
+
+3. **Layout Principles**
+   - Maximum width: 1440px
+   - Consistent padding: 5% on desktop
+   - Grid system: 12 columns
+   - Whitespace ratio: 1:1.618 (golden ratio)
+
+## 📊 Performance Requirements
+
+1. **Loading Speed**
+   - Initial load: < 2.5s
+   - Time to Interactive: < 3.5s
+   - First Contentful Paint: < 1.5s
+
+2. **SEO Optimization**
+   - Schema markup for business info
+   - Local SEO implementation
+   - Service-specific metadata
+   - Sitemap generation
+
+3. **Accessibility**
+   - WCAG 2.1 AA compliance
+   - Keyboard navigation
+   - Screen reader optimization
+   - Color contrast ratios: 4.5:1
+
+## 🔒 Security Measures
+
+1. **Form Protection**
+   - CSRF tokens
+   - Rate limiting
+   - Input sanitization
+   - reCAPTCHA integration
+
+2. **Data Handling**
+   - GDPR compliance
+   - Cookie consent
+   - Privacy policy
+   - Terms of service
+
+## 📱 Mobile-First Considerations
+
+1. **Touch Targets**
+   - Minimum size: 44x44px
+   - Adequate spacing: 8px
+   - Clear feedback states
+
+2. **Content Adaptation**
+   - Collapsible navigation
+   - Simplified layouts
+   - Optimized images
+   - Touch-friendly forms
+
+## 🔄 Implementation Process
+
+1. **Setup Phase**
+   - [ ] Project initialization
+   - [ ] Dependencies installation
+   - [ ] Environment configuration
+   - [ ] CI/CD pipeline setup
+
+2. **Development Phase**
+   - [ ] Core layout implementation
+   - [ ] Component development
+   - [ ] Content integration
+   - [ ] Interactive features
+
+3. **Testing Phase**
+   - [ ] Cross-browser testing
+   - [ ] Responsive design validation
+   - [ ] Performance optimization
+   - [ ] Security audit
+
+4. **Deployment Phase**
+   - [ ] Server configuration
+   - [ ] SSL implementation
+   - [ ] CDN setup
+   - [ ] Monitoring tools
+
+## 📈 Analytics Integration
+
+1. **Key Metrics**
+   - Page views
+   - Time on site
+   - Bounce rate
+   - Conversion tracking
+
+2. **Event Tracking**
+   - Form submissions
+   - Service page visits
+   - CTA clicks
+   - Document downloads
+
+## 🔍 Quality Assurance
+
+1. **Code Quality**
+   - ESLint configuration
+   - Prettier formatting
+   - TypeScript strict mode
+   - Unit test coverage
+
+2. **Performance Testing**
+   - Lighthouse audits
+   - Core Web Vitals
+   - Load testing
+   - SEO scoring
+
+## 📝 Documentation Requirements
+
+1. **Technical Documentation**
+   - Setup instructions
+   - API documentation
+   - Component library
+   - Deployment guide
+
+2. **Content Guidelines**
+   - Style guide
+   - Content templates
+   - Image specifications
+   - SEO guidelines 

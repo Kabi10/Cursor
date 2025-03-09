@@ -1,0 +1,545 @@
+# Cursor Rules for AI Code Builders
+
+## ⚠️ MANDATORY PRE-IMPLEMENTATION CHECKLIST ⚠️
+STOP! Before writing ANY code or suggesting ANY changes:
+
+1. 🔍 SEARCH FIRST (REQUIRED):
+   ```bash
+   # Document ALL search results below
+   grep_search "[feature keyword]" # Search for related functionality
+   file_search "[filename pattern]" # Search for similar files
+   list_dir "[relevant directory]" # List contents of relevant directories
+   ```
+
+2. 📝 DOCUMENT FINDINGS (REQUIRED):
+   ```markdown
+   ## Existing Files Found:
+   - [List all relevant files found with full paths]
+   - [Include file sizes and last modified dates if relevant]
+   
+   ## Existing Functionality:
+   - [Describe what already exists in detail]
+   - [Note any patterns or architectural approaches used]
+   
+   ## Gaps Identified:
+   - [List what's missing or needs enhancement]
+   - [Identify technical debt or issues in existing code]
+   
+   ## Implementation Decision Tree:
+   - Is there existing code that serves this purpose? [Yes/No]
+   - Can existing code be enhanced to meet requirements? [Yes/No]
+   - Is creating new code justified? [Yes/No, with reasoning]
+   
+   ## Proposed Approach:
+   - [ ] Enhance existing code at [file path]
+   - [ ] Create new files (requires detailed justification)
+   - [ ] Refactor existing code at [file path]
+   
+   ## Implementation Plan:
+   1. [First step with estimated effort]
+   2. [Second step with estimated effort]
+   3. [Additional steps as needed]
+   ```
+
+3. ✋ WAIT FOR APPROVAL:
+   - Present findings to user with clear options
+   - Get explicit approval for chosen approach
+   - Never proceed with new files if similar functionality exists
+   - Document approval in the implementation plan
+
+❌ IF YOU SKIP THIS CHECKLIST, YOU ARE VIOLATING THE MOST IMPORTANT RULE ❌
+
+## 📚 AI Instructions
+
+As an AI code builder, this document serves as your complete guide for rebuilding and extending this Next.js e-commerce project. The following rules define HOW you should approach the implementation:
+
+1. **Decision Protocol**: Before implementing any feature:
+   - First search for existing code and patterns
+   - Show clear options with tradeoffs
+   - Wait for explicit approval
+   - Document your decision-making process
+
+2. **Context Management**:
+   - Maintain a mental map of the project architecture
+   - Reference existing patterns when suggesting solutions
+   - Track technical debt and refactoring opportunities
+   - Keep your internal representation of the codebase updated
+
+3. **Implementation Approach**:
+   - Follow the pattern recognition guidelines
+   - Use established project patterns over introducing new ones
+   - Provide "why" explanations along with code
+   - Tag all implementation decisions with appropriate decision factors
+
+4. **Uncertainty Protocol**:
+   - When encountering ambiguity, present options with pros/cons
+   - Explicitly flag incomplete knowledge ("This appears to be ___, but I need more context")
+   - Use specified formats for indicating uncertainty levels
+   - Provide specific questions to resolve key uncertainties
+
+## 🧠 Pattern Recognition Map
+
+### Code Structure Patterns
+- **Server-Component Pattern**: `async function Page/Component({ params }) + await fetch/db` 
+- **Client-Interactive Pattern**: `'use client'; useState/useEffect + event handlers`
+- **Data-Fetch Pattern**: `getData` functions paired with React Server Components
+- **Layout Pattern**: Hierarchical layouts with global elements in parent layouts
+
+### Feature Implementation Patterns
+- **Auth Flow Pattern**: Server-side session checking → client-side UI states
+- **Data Display Pattern**: Skeleton loading → data fetch → render with error boundaries
+- **Form Pattern**: Zod schema → form component → server action → response handling
+- **Filter Pattern**: URL-based state → server-side filtering → paginated results
+
+## 📊 Project Progress Dashboard
+Overall Progress: 0% Complete
+- Setup & Configuration    □□□□□□□□□□   0%
+- Core Features           □□□□□□□□□□   0%
+- Admin Dashboard         □□□□□□□□□□   0%
+- User Features           □□□□□□□□□□   0%
+- Advanced Features       □□□□□□□□□□   0%
+- Testing & Deployment    □□□□□□□□□□   0%
+- Post-Launch             □□□□□□□□□□   0%
+
+## 🗺️ Project Architecture Map
+
+```
+┌─ User Interface Layer ───────────────┐      ┌─ Data Access Layer ─┐
+│                                      │      │                     │
+│  ┌─ Page Components ─────────────┐   │      │  ┌─ API Routes ──┐  │
+│  │ - Server Components           │   │      │  │ - REST API    │  │
+│  │ - Data Fetching               │   │      │  │ - Server      │  │
+│  │ - Layout Structure            │   │      │  │   Actions     │  │
+│  └───────────────────────────────┘   │      │  └──────────────┘  │
+│                                      │      │                     │
+│  ┌─ Client Components ────────────┐  │      │  ┌─ Database ────┐  │
+│  │ - Interactive Elements         │◄─┼──────┼─►│ - Prisma ORM  │  │
+│  │ - State Management             │  │      │  │ - PostgreSQL  │  │
+│  │ - Form Handling                │  │      │  │ - Migrations  │  │
+│  └───────────────────────────────┘  │      │  └──────────────┘  │
+│                                      │      │                     │
+└──────────────────────────────────────┘      └─────────────────────┘
+
+┌─ Cross-Cutting Concerns ──────────────────────────────────────────┐
+│                                                                   │
+│  ┌─ Authentication ─┐  ┌─ State Management ┐  ┌─ Utilities ─────┐ │
+│  │ - NextAuth.js    │  │ - Zustand Stores  │  │ - Helpers       │ │
+│  │ - JWT Strategy   │  │ - Context API     │  │ - Constants     │ │
+│  │ - OAuth          │  │ - Local Storage   │  │ - Types         │ │
+│  └─────────────────┘  └──────────────────┘  └─────────────────┘ │
+│                                                                   │
+└───────────────────────────────────────────────────────────────────┘
+```
+
+## 🔄 Implementation Process
+
+1. **Component Creation Decision Tree**:
+   ```
+   Is this functionality already implemented?
+   ├── YES → Can existing code be reused directly?
+   │         ├── YES → Reuse existing code
+   │         └── NO → Can it be enhanced to meet requirements?
+   │               ├── YES → Enhance existing code
+   │               └── NO → Justify new implementation
+   └── NO → Is there a similar pattern elsewhere?
+           ├── YES → Adapt existing pattern
+           └── NO → Create new based on project standards
+   ```
+
+2. **Troubleshooting Map**:
+   ```
+   Issue detected
+   ├── Build error
+   │   ├── Type error → Check types.ts and component props
+   │   ├── Module error → Check import/export statements
+   │   └── Config error → Check next.config.js and environment
+   ├── Runtime error
+   │   ├── Data fetching → Check API routes and data models
+   │   ├── Rendering → Check component boundaries
+   │   └── Auth → Check session and token handling
+   └── Performance issue
+       ├── Slow initial load → Check server components
+       ├── Interaction delay → Check client component optimization
+       └── API latency → Check database queries
+   ```
+
+## 📝 Instructions
+
+- Record fixes for mistakes or corrections to avoid repetition in the `Lessons` section.
+- Organize thoughts and plan steps before starting a task in the `Scratchpad` section.
+- Clear old tasks if necessary.
+- Use todo markers for progress tracking:
+  - `[X]` Completed tasks
+  - `[ ]` Pending tasks
+- Update Scratchpad after completing subtasks.
+- Reflect and plan after milestones for better task management.
+- Always refer to Scratchpad before planning the next step.
+- ALWAYS CHECK FOR EXISTING FILES BEFORE CREATING NEW ONES TO AVOID DUPLICATES.
+
+## 🎓 Lessons
+
+### 🖥️ UI/UX Implementation Patterns
+- Use `npx shadcn@latest add [component]` for Shadcn UI components
+- Maintain consistent page layouts (p-6 padding, mb-8 header spacing)
+- For loading states: create skeleton components, use Suspense, show indicators for async operations
+- For forms: handle loading states with local state, disable inputs during submission
+- For filters/search: use URL params, implement debouncing, create separate filter components
+
+### 🔄 Next.js Architecture Patterns
+- Page props params must be typed as a Promise in Next.js 14+
+- Use `const session = await auth()` instead of `getServerSession(authOptions)`
+- Mark components using `useRouter` with `'use client'` directive
+- Components using `useSearchParams()` must be client components wrapped in Suspense
+- When using dynamic imports with `next/dynamic`, set `ssr: false` for client-only components
+- For client-side state: extract state display into client components, use dynamic imports with `ssr: false`
+- Pass search params as props from server components instead of using `useSearchParams()` directly
+- Handle auth properly: use middleware for protection, include callback URLs, use role-based access
+
+### 🧪 Testing Implementation Patterns
+- Use `jest.resetAllMocks` (without parentheses) in beforeEach blocks when mocking Next.js hooks
+- Always use `bcryptjs` instead of `bcrypt` in tests to avoid native dependencies
+- When mocking API handlers, use inline functions instead of `.mockImplementation()`
+- For dialog components, always provide `aria-describedby` attribute to avoid accessibility warnings
+- Use `jest.spyOn` for functions that need to be restored after tests
+- Mock Next.js hooks like `useRouter` at the module level with `jest.mock('next/navigation')`
+- When mocking `useRouter`, use `jest.mocked(useRouter).mockReturnValue()` instead of casting to `jest.Mock`
+- Initialize mocks with default values: `jest.mock('next/navigation', () => ({ useRouter: jest.fn(() => ({ push: jest.fn() })) }))`
+
+### 🛠️ Process Implementation Requirements
+- ALWAYS check for existing implementations before creating new files
+- Use grep_search/file_search to look for similar file names and functionality
+- Document search process in scratchpad before implementing features
+- NEVER skip the pre-implementation checklist to avoid duplicate code
+- Implement parallel components when dependencies allow
+- Use consistent patterns across similar file types
+- Create independent files first to avoid blocking dependencies
+- Leverage existing templates and patterns when available
+- Document implementation decisions for future reference
+- Split implementation from deployment for faster iteration
+
+## 🧩 Implementation Templates
+
+### Server Component Template
+```tsx
+export async function ProductsPage({ 
+  params,
+  searchParams 
+}: {
+  params: { id: string },
+  searchParams: { [key: string]: string | string[] | undefined }
+}) {
+  // Data fetching
+  const products = await getProducts(searchParams);
+  
+  // Error handling
+  if (!products) {
+    return <ErrorComponent message="Failed to load products" />;
+  }
+  
+  return (
+    <div className="p-6">
+      <h1 className="text-2xl font-bold mb-8">Products</h1>
+      
+      {/* Suspense boundary for client components */}
+      <Suspense fallback={<ProductsSkeleton />}>
+        <ProductsList products={products} />
+      </Suspense>
+    </div>
+  );
+}
+```
+
+### Client Component Template
+```tsx
+'use client';
+
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+
+export default function ProductsFilter({ 
+  initialFilters,
+  onFilterChange 
+}: FilterProps) {
+  // Local state
+  const [filters, setFilters] = useState(initialFilters);
+  const router = useRouter();
+  
+  // Event handlers
+  const handleFilterChange = (name: string, value: string) => {
+    const newFilters = { ...filters, [name]: value };
+    setFilters(newFilters);
+    
+    // Update URL params
+    const params = new URLSearchParams();
+    Object.entries(newFilters).forEach(([key, value]) => {
+      if (value) params.set(key, value);
+    });
+    
+    router.push(`?${params.toString()}`);
+    if (onFilterChange) onFilterChange(newFilters);
+  };
+  
+  return (
+    <div className="space-y-4">
+      {/* Filter UI components */}
+    </div>
+  );
+}
+```
+
+### Data Fetching Template
+```tsx
+// In lib/data.ts
+export async function getProducts(
+  filters: Record<string, string | string[] | undefined>
+) {
+  try {
+    const { category, price, sort } = filters;
+    
+    // Build query
+    const query = {
+      where: {},
+      orderBy: {},
+      include: { images: true, category: true }
+    };
+    
+    if (category) {
+      query.where.categoryId = category.toString();
+    }
+    
+    if (price) {
+      const [min, max] = price.toString().split('-');
+      query.where.price = {
+        gte: parseFloat(min),
+        lte: parseFloat(max)
+      };
+    }
+    
+    if (sort) {
+      const [field, direction] = sort.toString().split('-');
+      query.orderBy[field] = direction;
+    }
+    
+    // Execute query (with error handling and timeout)
+    const products = await prisma.product.findMany(query);
+    return products;
+  } catch (error) {
+    console.error("Failed to fetch products:", error);
+    return null;
+  }
+}
+```
+
+## 🛡️ Critical Standards
+
+### Technical Quality Standards
+| Category | Standards |
+|----------|-----------|
+| Type Safety | • No `any` types<br>• Explicit return types on functions<br>• Proper interface definitions |
+| Error Handling | • Try/catch blocks around async operations<br>• Graceful fallbacks<br>• Error logging |
+| Performance | • Proper component splitting<br>• Data fetching optimizations<br>• Bundle size monitoring |
+| Security | • Input validation<br>• Authentication checks<br>• CSRF protection |
+
+### Testing Coverage Requirements
+| Component Type | Minimum Coverage | Required Test Types |
+|----------------|------------------|---------------------|
+| UI Components | 80% | • Unit tests<br>• Snapshot tests |
+| Pages | 70% | • Loading states<br>• Error states<br>• Integration tests |
+| API Routes | 90% | • Input validation<br>• Auth checks<br>• Error handling |
+| Utility Functions | 95% | • Unit tests<br>• Edge cases |
+| State Management | 85% | • State transitions<br>• Side effects |
+
+### Environment Configuration Standard
+```
+.env                  # Local development variables (NOT committed)
+.env.example          # Template with all required variables (committed)
+.env.production       # Production variables template (committed)
+```
+
+### Required Environment Variables Map
+| Variable | Purpose | Required In |
+|----------|---------|-------------|
+| `DATABASE_URL` | Database connection string | All environments |
+| `NEXTAUTH_SECRET` | Authentication encryption key | All environments |
+| `NEXTAUTH_URL` | Base URL for authentication | All environments |
+| `NEXT_PUBLIC_APP_URL` | Public-facing application URL | All environments |
+| `GOOGLE_CLIENT_ID` | OAuth authentication | If using Google auth |
+| `GOOGLE_CLIENT_SECRET` | OAuth authentication | If using Google auth |
+| `GITHUB_CLIENT_ID` | OAuth authentication | If using GitHub auth |
+| `GITHUB_CLIENT_SECRET` | OAuth authentication | If using GitHub auth |
+| `STRIPE_SECRET_KEY` | Payment processing | If using Stripe |
+| `STRIPE_WEBHOOK_SECRET` | Payment webhooks | If using Stripe |
+| `RESEND_API_KEY` | Email service | If using Resend |
+| `UPLOADTHING_SECRET` | File uploads | If using Uploadthing |
+| `UPLOADTHING_APP_ID` | File uploads | If using Uploadthing |
+
+## 📊 Technical Debt Tracking
+
+### Debt Classification System
+| Category | Definition | Resolution Priority |
+|----------|------------|---------------------|
+| Critical | Breaks functionality or security vulnerability | IMMEDIATE |
+| Major | Affects user experience or performance | HIGH |
+| Minor | Code quality or maintainability issue | MEDIUM |
+| Refactor | Improved implementation possible | LOW |
+
+### Tracking Format
+```
+## Technical Debt Item
+- **Location**: [file path]
+- **Category**: [Critical/Major/Minor/Refactor]
+- **Description**: [Brief description of the issue]
+- **Impact**: [How it affects the system]
+- **Resolution Path**: [Steps to fix]
+- **Estimated Effort**: [T-shirt size: XS/S/M/L/XL]
+```
+
+## 🔍 Code Quality Metrics
+
+### Performance Budgets
+- Page Load: < 3s on 4G
+- First Contentful Paint: < 1.5s
+- Bundle Size: < 200KB initial JS
+- API Response: < 300ms
+- Core Web Vitals minimum:
+  - LCP: < 2.5s
+  - FID: < 100ms
+  - CLS: < 0.1
+
+### Code Complexity Limits
+- Function complexity: < 15 cognitive complexity
+- File size: < 400 lines
+- Function length: < 50 lines
+- Component props: < 10 props
+- Nesting depth: < 4 levels in JSX
+
+## 📋 Scratchpad
+
+### Phase 1: Project Setup and Configuration 🚧 (0% Complete)
+[ ] 1.1. Initial Setup
+    [ ] Create new Next.js 15 project with TypeScript
+    [ ] Configure ESLint and Prettier
+    [ ] Set up project structure and folders
+    [ ] Initialize Git repository
+
+[ ] 1.2. Dependencies Installation
+    [ ] Install and configure Shadcn UI
+    [ ] Set up Lucide icons
+    [ ] Install remaining core dependencies
+        [ ] Add Zod for validation
+        [ ] Add Zustand for state management
+        [ ] Add Recharts for analytics
+        [ ] Add Resend for emails
+        [ ] Add Uploadthing for file uploads
+    [ ] Configure Tailwind CSS
+        [ ] Add remaining Tailwind plugins
+        [ ] Configure theme extensions
+
+[ ] 1.3. Database and Authentication Setup
+    [ ] Set up PostgreSQL database
+    [ ] Configure Prisma and create initial schema
+    [ ] Implement NextAuth.js beta for authentication
+    [ ] Set up email service with Resend
+
+### Phase 2: Core Features Development 🚧 (0% Complete)
+[ ] 2.1. Products Catalog
+    [ ] Products listing page with filters and search
+    [ ] Product detail pages with image gallery
+    [ ] Reviews and ratings section
+    [ ] Related products section
+
+[ ] 2.2. Shopping Cart System
+    [ ] Create cart store with Zustand
+    [ ] Implement add/remove functionality
+    [ ] Cart persistence
+    [ ] Quantity management
+    [ ] Cart total calculations
+
+[ ] 2.3. User Authentication
+    [ ] Sign up/login flows
+    [ ] User roles (admin, customer)
+    [ ] Password reset functionality
+    [ ] OAuth providers integration
+    [ ] Authentication Improvements
+
+### Phase 3: Admin Dashboard Development 🚧 (0% Complete)
+[ ] 3.1. Admin Panel Setup
+    [ ] Create admin layout
+    [ ] Implement admin authentication
+    [ ] Set up admin routes protection
+    [ ] Create admin navigation
+
+[ ] 3.2. Dashboard Components
+    [ ] Metrics Section
+        [ ] Key performance indicators
+        [ ] Change tracking
+        [ ] Animated displays
+    [ ] Analytics Section
+        [ ] Revenue & orders chart
+        [ ] Order status distribution
+    [ ] Management Section
+        [ ] Top products overview
+        [ ] Low stock alerts
+        [ ] Recent orders table
+
+### Phase 4: User Features and Experience 🚧 (0% Complete)
+[ ] 4.1. User Dashboard
+    [ ] Profile management
+    [ ] Order history
+    [ ] Wishlist functionality
+    [ ] Address management
+
+[ ] 4.2. Product Features
+    [ ] Product reviews
+    [ ] Social sharing
+    [ ] Recommendations
+
+### Phase 5: Advanced Features 🚧 (0% Complete)
+[ ] 5.1. Search and Filter
+    [ ] Advanced search implementation
+    [ ] Faceted filtering
+    [ ] Price range filter
+    [ ] Sorting options
+
+[ ] 5.2. Performance Optimization
+    [ ] Image optimization
+    [ ] Lazy loading
+    [ ] Caching configuration
+    [ ] API route optimization
+
+[ ] 5.3. SEO and Marketing
+    [ ] SEO best practices
+    [ ] Sitemap generation
+    [ ] Meta tags
+    [ ] Schema markup
+
+### Phase 6: Testing and Deployment 🚧 (0% Complete)
+[ ] 6.1. Testing
+    [ ] Set up Jest with TypeScript support
+    [ ] Configure test environment
+    [ ] Create test utilities
+    [ ] Image utilities tests
+    [ ] UI Component tests
+    [ ] Integration tests
+    [ ] E2E testing
+    [ ] Security testing
+
+[ ] 6.2. Deployment
+    [ ] CI/CD pipeline
+    [ ] Production environment
+    [ ] Deployment process
+    [ ] Performance monitoring
+    [ ] Environment variable configuration
+
+### Phase 7: Post-Launch 🚧 (0% Complete)
+[ ] 7.1. Monitoring and Maintenance
+    [ ] Error tracking
+    [ ] Analytics implementation
+    [ ] Backup system
+    [ ] Performance metrics
+
+[ ] 7.2. Documentation
+    [ ] API documentation
+    [ ] User guides
+    [ ] Admin processes
+    [ ] Maintenance procedures

@@ -1,0 +1,247 @@
+# Social Media & Community Website Rules for AI Code Builders
+
+## ⚠️ MANDATORY PRE-IMPLEMENTATION CHECKLIST ⚠️
+
+1. 🤝 COMMUNITY REQUIREMENTS VALIDATION
+   - [ ] Define user roles and permissions
+   - [ ] Plan content types
+   - [ ] Identify interaction features
+   - [ ] List moderation tools
+   - [ ] Document community guidelines
+
+2. 📱 RESPONSIVE DESIGN REQUIREMENTS
+   - [ ] Desktop (1920px, 1440px, 1280px)
+   - [ ] Tablet (1024px, 768px)
+   - [ ] Mobile (428px, 375px, 320px)
+   - [ ] Progressive Web App support
+
+3. 🎯 CORE FEATURES CHECKLIST
+   - [ ] User profiles
+   - [ ] News feed
+   - [ ] Direct messaging
+   - [ ] Groups/Communities
+   - [ ] Content sharing
+   - [ ] Notifications
+   - [ ] Search functionality
+   - [ ] Real-time updates
+
+## 🏗️ Architecture Guidelines
+
+### Component Structure
+```
+src/
+├── components/
+│   ├── layout/
+│   │   ├── Header.tsx
+│   │   ├── Footer.tsx
+│   │   └── Navigation.tsx
+│   ├── feed/
+│   │   ├── PostCard.tsx
+│   │   ├── PostList.tsx
+│   │   ├── CreatePost.tsx
+│   │   └── Comments.tsx
+│   ├── profile/
+│   │   ├── UserProfile.tsx
+│   │   ├── EditProfile.tsx
+│   │   └── ActivityFeed.tsx
+│   ├── messaging/
+│   │   ├── ChatWindow.tsx
+│   │   ├── MessageList.tsx
+│   │   └── Conversations.tsx
+│   ├── groups/
+│   │   ├── GroupCard.tsx
+│   │   ├── GroupFeed.tsx
+│   │   └── GroupMembers.tsx
+│   └── common/
+│       ├── Notifications.tsx
+│       ├── SearchBar.tsx
+│       └── MediaUpload.tsx
+├── pages/
+│   ├── feed/
+│   ├── profile/
+│   ├── messages/
+│   ├── groups/
+│   └── search/
+└── styles/
+    └── theme/
+```
+
+### Feature Requirements
+1. **User Profiles**
+   - Avatar upload
+   - Cover photo
+   - Bio/About
+   - Activity feed
+   - Privacy settings
+
+2. **Content Types**
+   - Text posts
+   - Image galleries
+   - Video sharing
+   - Link previews
+   - Polls/Surveys
+
+3. **Interaction Features**
+   - Likes/Reactions
+   - Comments
+   - Shares
+   - Mentions
+   - Hashtags
+
+## 📊 Performance Requirements
+
+1. **Real-time Features**
+   - WebSocket connections
+   - Push notifications
+   - Live updates
+   - Typing indicators
+
+2. **Content Loading**
+   - Infinite scroll
+   - Lazy loading
+   - Content preloading
+   - Image optimization
+
+3. **State Management**
+   - Optimistic updates
+   - Cache management
+   - Offline support
+   - Data synchronization
+
+## 🔒 Security & Privacy
+
+1. **User Security**
+   - Two-factor auth
+   - Session management
+   - Privacy controls
+   - Data encryption
+
+2. **Content Security**
+   - Upload scanning
+   - Content filtering
+   - NSFW detection
+   - Spam prevention
+
+## 📱 Mobile-First Considerations
+
+1. **App-like Experience**
+   - PWA implementation
+   - Offline capabilities
+   - Push notifications
+   - Touch gestures
+
+2. **Performance**
+   - Image optimization
+   - Network handling
+   - Battery efficiency
+   - Storage management
+
+## 👥 Community Features
+
+1. **Groups/Communities**
+   - Creation flow
+   - Member management
+   - Content moderation
+   - Activity tracking
+
+2. **Messaging System**
+   - Direct messages
+   - Group chats
+   - Media sharing
+   - Message status
+
+## 🔄 Implementation Process
+
+1. **Setup Phase**
+   - [ ] Authentication system
+   - [ ] Real-time infrastructure
+   - [ ] Storage solution
+   - [ ] Search implementation
+
+2. **Core Features**
+   - [ ] User profiles
+   - [ ] Content creation
+   - [ ] Interaction system
+   - [ ] Messaging platform
+
+3. **Community Features**
+   - [ ] Groups system
+   - [ ] Moderation tools
+   - [ ] Reporting system
+   - [ ] Analytics setup
+
+4. **Enhancement Phase**
+   - [ ] Performance optimization
+   - [ ] Security hardening
+   - [ ] Feature expansion
+   - [ ] Scale testing
+
+## 📈 Analytics Integration
+
+1. **User Analytics**
+   - Activity tracking
+   - Engagement metrics
+   - Retention analysis
+   - Growth tracking
+
+2. **Content Analytics**
+   - Popularity metrics
+   - Trend analysis
+   - Content reach
+   - Interaction rates
+
+## 🔍 Quality Assurance
+
+1. **Performance Testing**
+   - Load testing
+   - Real-time testing
+   - Mobile performance
+   - Network resilience
+
+2. **Security Testing**
+   - Penetration testing
+   - Privacy audit
+   - Data protection
+   - Access control
+
+## 📝 Documentation Requirements
+
+1. **Technical Documentation**
+   - Architecture overview
+   - API documentation
+   - Security protocols
+   - Scaling guidelines
+
+2. **Community Guidelines**
+   - Content policies
+   - Moderation rules
+   - Privacy policies
+   - Terms of service
+
+## 🚀 Scaling Considerations
+
+1. **Infrastructure**
+   - Horizontal scaling
+   - Load balancing
+   - Caching strategy
+   - Database sharding
+
+2. **Performance**
+   - CDN integration
+   - Query optimization
+   - Asset optimization
+   - Memory management
+
+## 🔐 Moderation Tools
+
+1. **Content Moderation**
+   - Automated filtering
+   - Report handling
+   - User warnings
+   - Content removal
+
+2. **User Management**
+   - Role management
+   - Ban system
+   - Appeal process
+   - Activity monitoring 

@@ -1,0 +1,246 @@
+# Educational Website Rules for AI Code Builders
+
+## ⚠️ MANDATORY PRE-IMPLEMENTATION CHECKLIST ⚠️
+
+1. 📚 EDUCATIONAL REQUIREMENTS VALIDATION
+   - [ ] Define course structure
+   - [ ] Plan learning paths
+   - [ ] Identify user roles
+   - [ ] List assessment types
+   - [ ] Document learning outcomes
+
+2. 📱 RESPONSIVE DESIGN REQUIREMENTS
+   - [ ] Desktop (1920px, 1440px, 1280px)
+   - [ ] Tablet (1024px, 768px)
+   - [ ] Mobile (428px, 375px, 320px)
+   - [ ] Interactive content support
+
+3. 🎯 CORE FEATURES CHECKLIST
+   - [ ] Course catalog
+   - [ ] Learning management
+   - [ ] Progress tracking
+   - [ ] Assessment system
+   - [ ] Discussion forums
+   - [ ] Resource library
+   - [ ] Certificate generation
+   - [ ] Student dashboard
+
+## 🏗️ Architecture Guidelines
+
+### Component Structure
+```
+src/
+├── components/
+│   ├── layout/
+│   │   ├── Header.tsx
+│   │   ├── Footer.tsx
+│   │   └── Navigation.tsx
+│   ├── courses/
+│   │   ├── CourseCard.tsx
+│   │   ├── CourseDetail.tsx
+│   │   ├── LessonPlayer.tsx
+│   │   └── Progress.tsx
+│   ├── learning/
+│   │   ├── VideoPlayer.tsx
+│   │   ├── Quiz.tsx
+│   │   ├── Assignment.tsx
+│   │   └── Resources.tsx
+│   ├── student/
+│   │   ├── Dashboard.tsx
+│   │   ├── Progress.tsx
+│   │   └── Certificates.tsx
+│   ├── instructor/
+│   │   ├── CourseBuilder.tsx
+│   │   ├── Analytics.tsx
+│   │   └── Gradebook.tsx
+│   └── common/
+│       ├── SearchBar.tsx
+│       ├── Discussion.tsx
+│       └── Notifications.tsx
+├── pages/
+│   ├── courses/
+│   ├── learn/
+│   ├── dashboard/
+│   └── resources/
+└── styles/
+    └── theme/
+```
+
+### Learning Structure
+1. **Course Format**
+   - Course overview
+   - Learning objectives
+   - Module structure
+   - Assessment criteria
+   - Resources
+
+2. **Content Types**
+   - Video lectures
+   - Interactive lessons
+   - Quizzes/Tests
+   - Assignments
+   - Discussion topics
+
+3. **Progress Tracking**
+   - Course completion
+   - Assessment scores
+   - Learning path progress
+   - Certification status
+
+## 📊 Performance Requirements
+
+1. **Content Delivery**
+   - Video streaming
+   - Resource downloads
+   - Interactive content
+   - Offline access
+
+2. **Assessment System**
+   - Real-time grading
+   - Progress tracking
+   - Performance analytics
+   - Feedback system
+
+3. **Learning Analytics**
+   - Student progress
+   - Engagement metrics
+   - Course analytics
+   - Learning outcomes
+
+## 🎓 Learning Experience
+
+1. **Interactive Features**
+   - In-video quizzes
+   - Practice exercises
+   - Discussion forums
+   - Live sessions
+
+2. **Progress Visualization**
+   - Learning path maps
+   - Progress indicators
+   - Achievement badges
+   - Performance graphs
+
+## 👨‍🏫 Instructor Tools
+
+1. **Course Management**
+   - Content creation
+   - Resource upload
+   - Assessment builder
+   - Student tracking
+
+2. **Analytics Dashboard**
+   - Student progress
+   - Course performance
+   - Engagement metrics
+   - Assessment results
+
+## 📱 Mobile Learning
+
+1. **Mobile Experience**
+   - Offline access
+   - Progress sync
+   - Mobile-optimized content
+   - Touch interactions
+
+2. **Content Adaptation**
+   - Responsive video
+   - Mobile assessments
+   - Touch-friendly UI
+   - Data efficiency
+
+## 🔄 Implementation Process
+
+1. **Setup Phase**
+   - [ ] LMS integration
+   - [ ] Content delivery
+   - [ ] Assessment system
+   - [ ] Analytics setup
+
+2. **Content Development**
+   - [ ] Course builder
+   - [ ] Resource management
+   - [ ] Assessment tools
+   - [ ] Discussion system
+
+3. **Learning Features**
+   - [ ] Progress tracking
+   - [ ] Assessment engine
+   - [ ] Certificate system
+   - [ ] Analytics dashboard
+
+4. **Enhancement Phase**
+   - [ ] Performance optimization
+   - [ ] Mobile experience
+   - [ ] Feature expansion
+   - [ ] Integration testing
+
+## 📈 Analytics Integration
+
+1. **Learning Analytics**
+   - Course completion
+   - Assessment performance
+   - Engagement levels
+   - Learning outcomes
+
+2. **Instructor Analytics**
+   - Course effectiveness
+   - Student progress
+   - Content engagement
+   - Assessment results
+
+## 🔍 Quality Assurance
+
+1. **Content Quality**
+   - Learning effectiveness
+   - Content accuracy
+   - Assessment validity
+   - Resource quality
+
+2. **Technical Quality**
+   - Performance testing
+   - Mobile testing
+   - Integration testing
+   - Security validation
+
+## 📝 Documentation Requirements
+
+1. **Technical Documentation**
+   - System architecture
+   - Integration guides
+   - API documentation
+   - Deployment process
+
+2. **User Documentation**
+   - Student guides
+   - Instructor manuals
+   - Course creation
+   - Best practices
+
+## 🔐 Security Requirements
+
+1. **Content Security**
+   - DRM protection
+   - Access control
+   - Copyright protection
+   - Plagiarism detection
+
+2. **User Security**
+   - Authentication
+   - Data protection
+   - Privacy compliance
+   - Assessment security
+
+## 🌐 Integration Requirements
+
+1. **Third-party Tools**
+   - Video platforms
+   - Assessment tools
+   - Payment systems
+   - Authentication services
+
+2. **Data Exchange**
+   - Learning records
+   - Progress data
+   - Analytics export
+   - Content import 
