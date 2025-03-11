@@ -1,0 +1,204 @@
+# Cursor Landing Page Rules
+
+## 🗺️ Landing Page Architecture Map
+
+```
+┌─ User Interface Layer ──────────────┐      ┌─ Conversion Layer ────────┐
+│                                     │      │                           │
+│  ┌─ Page Sections ─────────────┐    │      │  ┌─ Form Processing ────┐  │
+│  │ - Hero Section             │    │      │  │ - Lead Capture       │  │
+│  │ - Features/Benefits        │    │      │  │ - Form Validation    │  │
+│  │ - Social Proof             │    │      │  │ - Submission Handling│  │
+│  │ - CTA Sections             │    │      │  │ - Thank You/Next Steps│ │
+│  └──────────────────────────────┘    │      │  └─────────────────────┘  │
+│                                     │      │                           │
+│  ┌─ Client Components ───────────┐  │      │  ┌─ Data Storage ───────┐  │
+│  │ - Animated Elements          │◄─┼──────┼─►│ - Lead Information    │  │
+│  │ - Form Components            │  │      │  │ - Analytics Data      │  │
+│  │ - Testimonial Sliders        │  │      │  │ - A/B Test Variations │  │
+│  │ - Mobile Responsiveness      │  │      │  │ - Campaign Metrics    │  │
+│  └──────────────────────────────┘  │      │  └─────────────────────┘  │
+│                                     │      │                           │
+└─────────────────────────────────────┘      └───────────────────────────┘
+
+┌─ Landing Page Specific Concerns ─────────────────────────────────────────┐
+│                                                                          │
+│  ┌─ Conversion Optimization ┐  ┌─ Messaging Strategy ┐  ┌─ Analytics ───┐ │
+│  │ - Value Proposition     │  │ - Copy Hierarchy    │  │ - Conversion   │ │
+│  │ - CTA Design            │  │ - Pain Points       │  │   Tracking     │ │
+│  │ - Form Optimization     │  │ - Benefits          │  │ - Heatmaps     │ │
+│  │ - A/B Testing           │  │ - Social Proof      │  │ - User Journey │ │
+│  └────────────────────────┘  └────────────────────┘  └─────────────────┘ │
+│                                                                          │
+└──────────────────────────────────────────────────────────────────────────┘
+```
+
+## ⚠️ MANDATORY PRE-IMPLEMENTATION CHECKLIST ⚠️
+STOP! Before writing ANY code or suggesting ANY changes:
+
+1. 🔍 SEARCH FIRST:
+   ```bash
+   # REQUIRED: Run these searches and document results
+   grep_search for functionality
+   file_search for similar files
+   list_dir in relevant directories
+   ```
+
+2. 📝 DOCUMENT FINDINGS:
+   ```markdown
+   ## Existing Files Found:
+   - [List all relevant files found with full paths]
+   - [Include file sizes and last modified dates if relevant]
+   
+   ## Existing Functionality:
+   - [Describe what already exists in detail]
+   - [Note any patterns or architectural approaches used]
+   
+   ## Gaps Identified:
+   - [List what's missing or needs enhancement]
+   - [Identify technical debt or issues in existing code]
+   
+   ## Implementation Decision Tree:
+   - Is there existing code that serves this purpose? [Yes/No]
+   - Can existing code be enhanced to meet requirements? [Yes/No]
+   - Is creating new code justified? [Yes/No, with reasoning]
+   
+   ## Proposed Approach:
+   - [ ] Enhance existing code at [file path]
+   - [ ] Create new files (requires detailed justification)
+   - [ ] Refactor existing code at [file path]
+   
+   ## Implementation Plan:
+   1. [First step with estimated effort]
+   2. [Second step with estimated effort]
+   3. [Additional steps as needed]
+   ```
+
+3. ✋ WAIT FOR APPROVAL:
+   - Present findings to user with clear options
+   - Get explicit approval for chosen approach
+   - Never proceed with new files if similar functionality exists
+   - Document approval in the implementation plan
+
+## 📋 Landing Page Implementation Plan
+
+### Phase 1: Landing Page Setup
+[ ] 1.1. Initial Setup
+    [ ] Create Next.js project with TypeScript
+    [ ] Configure ESLint and Prettier
+    [ ] Set up project structure for landing page
+    [ ] Initialize Git repository
+
+[ ] 1.2. Landing Page Dependencies
+    [ ] Install Shadcn UI for landing page components
+    [ ] Set up animation libraries (Framer Motion)
+    [ ] Install landing page specific dependencies
+        [ ] Add form handling and validation
+        [ ] Add analytics tracking
+        [ ] Add A/B testing tools if needed
+
+[ ] 1.3. Design Implementation
+    [ ] Create responsive layout structure
+    [ ] Implement brand colors and typography
+    [ ] Set up image optimization
+    [ ] Create reusable UI components
+
+### Phase 2: Core Landing Page Sections
+[ ] 2.1. Hero Section
+    [ ] Headline and subheadline
+    [ ] Primary CTA
+    [ ] Visual element (image/video)
+    [ ] Social proof indicators
+
+[ ] 2.2. Value Proposition Sections
+    [ ] Features/benefits presentation
+    [ ] Problem/solution framing
+    [ ] Visual aids and illustrations
+    [ ] Secondary CTAs
+
+[ ] 2.3. Social Proof
+    [ ] Testimonial components
+    [ ] Client logos section
+    [ ] Case study highlights
+    [ ] Trust indicators
+
+### Phase 3: Conversion Elements
+[ ] 3.1. Lead Capture
+    [ ] Form design and implementation
+    [ ] Form validation
+    [ ] Submission handling
+    [ ] Thank you/confirmation state
+
+[ ] 3.2. Supporting Elements
+    [ ] FAQ section
+    [ ] Pricing information (if applicable)
+    [ ] Guarantee statements
+    [ ] Final CTA section
+
+### Phase 4: Optimization
+[ ] 4.1. Performance
+    [ ] Image optimization
+    [ ] Core Web Vitals improvement
+    [ ] Mobile responsiveness testing
+    [ ] Page load optimization
+
+[ ] 4.2. Analytics
+    [ ] Conversion tracking setup
+    [ ] Event tracking implementation
+    [ ] A/B testing framework
+    [ ] User behavior monitoring
+
+## 🧠 Landing Page Pattern Recognition Map
+
+### Landing Page Feature Patterns
+- **Hero Pattern**: Headline → Subheadline → Primary CTA → Visual Element
+- **Feature Pattern**: Problem Statement → Solution → Benefit → Visual
+- **Testimonial Pattern**: Quote → Client Name → Position/Company → Photo
+- **CTA Pattern**: Value Proposition → Action Button → Risk Reducer
+- **Form Pattern**: Minimal Fields → Clear Labels → Submit Button → Next Steps
+- **FAQ Pattern**: Common Objections → Clear Answers → Supporting Evidence → CTA
+
+## 📊 Project Progress Dashboard
+Overall Progress: 0% Complete
+- Setup & Configuration    □□□□□□□□□□   0%
+- Core Sections           □□□□□□□□□□   0%
+- Conversion Elements     □□□□□□□□□□   0%
+- Performance            □□□□□□□□□□   0%
+- Analytics              □□□□□□□□□□   0%
+- Testing                □□□□□□□□□□   0%
+
+## 🛡️ Critical Standards
+
+### Technical Quality Standards
+| Category | Standards |
+|----------|-----------|
+| Type Safety | • No `any` types<br>• Explicit return types on functions<br>• Proper interface definitions |
+| Error Handling | • Try/catch blocks around async operations<br>• Graceful fallbacks<br>• Error logging |
+| Performance | • Proper component splitting<br>• Data fetching optimizations<br>• Bundle size monitoring |
+| Security | • Input validation<br>• Authentication checks<br>• CSRF protection |
+
+### Testing Coverage Requirements
+| Component Type | Minimum Coverage | Required Test Types |
+|----------------|------------------|---------------------|
+| UI Components | 80% | • Unit tests<br>• Snapshot tests |
+| Pages | 70% | • Loading states<br>• Error states<br>• Integration tests |
+| Forms | 90% | • Validation<br>• Submission<br>• Error states |
+| Analytics | 95% | • Event tracking<br>• Conversion tracking |
+
+## 📝 Scratchpad
+
+### Current Tasks:
+[ ] Initial landing page setup
+[ ] Core sections implementation
+[ ] Conversion optimization
+
+### Notes:
+- Focus on conversion rate optimization
+- Ensure mobile-first approach
+- Track key performance metrics
+
+### Next Steps:
+1. Design review and approval
+2. Development environment setup
+3. Core sections implementation
+

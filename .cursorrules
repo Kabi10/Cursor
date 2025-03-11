@@ -15,23 +15,37 @@ STOP! Before writing ANY code or suggesting ANY changes:
    ```markdown
    # REQUIRED: Fill this out
    ## Existing Files Found:
-   - [List all relevant files found]
+   - [List all relevant files found with full paths]
+   - [Include file sizes and last modified dates if relevant]
    
    ## Existing Functionality:
-   - [Describe what already exists]
+   - [Describe what already exists in detail]
+   - [Note any patterns or architectural approaches used]
    
    ## Gaps Identified:
    - [List what's missing or needs enhancement]
+   - [Identify technical debt or issues in existing code]
+   
+   ## Implementation Decision Tree:
+   - Is there existing code that serves this purpose? [Yes/No]
+   - Can existing code be enhanced to meet requirements? [Yes/No]
+   - Is creating new code justified? [Yes/No, with reasoning]
    
    ## Proposed Approach:
-   - [ ] Enhance existing code
-   - [ ] Create new files (requires justification)
-   - [ ] Refactor existing code
+   - [ ] Enhance existing code at [file path]
+   - [ ] Create new files (requires detailed justification)
+   - [ ] Refactor existing code at [file path]
+   
+   ## Implementation Plan:
+   1. [First step with estimated effort]
+   2. [Second step with estimated effort]
+   3. [Additional steps as needed]
    ```
 
 3. ✋ WAIT FOR APPROVAL:
-   - Present findings to user
-   - Get explicit approval for approach
+   - Present findings to user with clear options
+   - Get explicit approval for chosen approach
    - Never proceed with new files if similar functionality exists
+   - Document approval in the implementation plan
 
 ❌ IF YOU SKIP THIS CHECKLIST, YOU ARE VIOLATING THE MOST IMPORTANT RULE ❌

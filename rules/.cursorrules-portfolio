@@ -1,0 +1,203 @@
+# Cursor Portfolio Rules
+
+## 🗺️ Portfolio Website Architecture Map
+
+```
+┌─ Showcase Layer ────────────────────┐      ┌─ Admin Layer ───────┐
+│                                      │      │                     │
+│  ┌─ Page Components ─────────────┐   │      │  ┌─ Dashboard ───┐  │
+│  │ - Home/Introduction          │   │      │  │ - Portfolio    │  │
+│  │ - Project Showcase           │   │      │  │   Management   │  │
+│  │ - About/Skills               │   │      │  │ - Analytics    │  │
+│  │ - Contact                    │   │      │  │ - Content      │  │
+│  └───────────────────────────────┘   │      │  │   Updates     │  │
+│                                      │      │  └──────────────┘  │
+│  ┌─ Client Components ────────────┐  │      │                     │
+│  │ - Project Gallery             │◄─┼──────┼─►┌─ Data Storage ┐  │
+│  │ - Skills Visualization        │  │      │  │ - Projects    │  │
+│  │ - Contact Form                │  │      │  │ - Skills      │  │
+│  │ - Animation Effects           │  │      │  │ - Testimonials│  │
+│  └───────────────────────────────┘  │      │  └──────────────┘  │
+│                                      │      │                     │
+└──────────────────────────────────────┘      └─────────────────────┘
+
+┌─ Portfolio Specific Concerns ────────────────────────────────────┐
+│                                                                   │
+│  ┌─ Visual Impact ───┐  ┌─ Project Showcase ─┐  ┌─ Personal ───┐ │
+│  │ - Animations      │  │ - Case Studies     │  │ - Bio        │ │
+│  │ - Image Gallery   │  │ - Project Details  │  │ - Skills     │ │
+│  │ - Typography      │  │ - Results/Metrics  │  │ - Resume     │ │
+│  └─────────────────┘  └──────────────────┘  └─────────────────┘ │
+│                                                                   │
+└───────────────────────────────────────────────────────────────────┘
+```
+
+## ⚠️ MANDATORY PRE-IMPLEMENTATION CHECKLIST ⚠️
+STOP! Before writing ANY code or suggesting ANY changes:
+
+1. 🔍 SEARCH FIRST:
+   ```bash
+   # REQUIRED: Run these searches and document results
+   grep_search for functionality
+   file_search for similar files
+   list_dir in relevant directories
+   ```
+
+2. 📝 DOCUMENT FINDINGS:
+   ```markdown
+   ## Existing Files Found:
+   - [List all relevant files found with full paths]
+   - [Include file sizes and last modified dates if relevant]
+   
+   ## Existing Functionality:
+   - [Describe what already exists in detail]
+   - [Note any patterns or architectural approaches used]
+   
+   ## Gaps Identified:
+   - [List what's missing or needs enhancement]
+   - [Identify technical debt or issues in existing code]
+   
+   ## Implementation Decision Tree:
+   - Is there existing code that serves this purpose? [Yes/No]
+   - Can existing code be enhanced to meet requirements? [Yes/No]
+   - Is creating new code justified? [Yes/No, with reasoning]
+   
+   ## Proposed Approach:
+   - [ ] Enhance existing code at [file path]
+   - [ ] Create new files (requires detailed justification)
+   - [ ] Refactor existing code at [file path]
+   
+   ## Implementation Plan:
+   1. [First step with estimated effort]
+   2. [Second step with estimated effort]
+   3. [Additional steps as needed]
+   ```
+
+3. ✋ WAIT FOR APPROVAL:
+   - Present findings to user with clear options
+   - Get explicit approval for chosen approach
+   - Never proceed with new files if similar functionality exists
+   - Document approval in the implementation plan
+
+## 📋 Portfolio Website Implementation Plan
+
+### Phase 1: Portfolio Setup
+[ ] 1.1. Initial Setup
+    [ ] Create Next.js project with TypeScript
+    [ ] Configure ESLint and Prettier
+    [ ] Set up project structure for portfolio
+    [ ] Initialize Git repository
+
+[ ] 1.2. Portfolio Dependencies
+    [ ] Install Shadcn UI for portfolio components
+    [ ] Set up animation libraries (Framer Motion)
+    [ ] Install portfolio specific dependencies
+        [ ] Add image gallery components
+        [ ] Add motion/animation libraries
+        [ ] Add form handling for contact
+
+[ ] 1.3. Content Structure
+    [ ] Design projects data model
+    [ ] Create skills and experience schema
+    [ ] Set up personal information storage
+    [ ] Create initial content structure
+
+### Phase 2: Core Portfolio Pages
+[ ] 2.1. Home and Introduction
+    [ ] Hero section with personal brand
+    [ ] Featured projects section
+    [ ] Skills overview
+    [ ] Brief introduction
+
+[ ] 2.2. Projects Showcase
+    [ ] Projects listing/grid
+    [ ] Project detail pages
+    [ ] Case study templates
+    [ ] Filterable project categories
+
+[ ] 2.3. About and Contact
+    [ ] Personal bio and history
+    [ ] Skills visualization
+    [ ] Experience timeline
+    [ ] Contact form with validation
+
+### Phase 3: Visual Enhancements
+[ ] 3.1. Animation and Interactivity
+    [ ] Scroll animations
+    [ ] Interactive elements
+    [ ] Page transitions
+    [ ] Loading animations
+
+[ ] 3.2. Media Optimization
+    [ ] Image galleries
+    [ ] Video integration
+    [ ] Responsive media handling
+    [ ] Lazy loading implementation
+
+### Phase 4: Portfolio Management
+[ ] 4.1. Project Management
+    [ ] Admin interface for projects
+    [ ] Content editing capabilities
+    [ ] Image upload and management
+    [ ] Draft and publishing workflow
+
+[ ] 4.2. Experience Features
+    [ ] Resume download option
+    [ ] Testimonials section
+    [ ] Contact form with email notification
+    [ ] Social media integration
+
+## 🧠 Portfolio Website Pattern Recognition Map
+
+### Portfolio Feature Patterns
+- **Introduction Pattern**: Visual Impact → Personal Brand → Key Skills → CTA
+- **Project Display Pattern**: Thumbnail → Brief → Technologies → Details Link
+- **Project Detail Pattern**: Overview → Problem → Solution → Results → Next Project
+- **Skills Pattern**: Categories → Visualization → Experience Level → Examples
+- **Contact Pattern**: Brief Message → Form → Alternative Contact Methods
+- **Personal Brand Pattern**: Consistent Typography → Color Scheme → Visual Style
+
+## 📊 Project Progress Dashboard
+Overall Progress: 0% Complete
+- Setup & Configuration    □□□□□□□□□□   0%
+- Core Pages              □□□□□□□□□□   0%
+- Visual Elements         □□□□□□□□□□   0%
+- Content Management      □□□□□□□□□□   0%
+- Performance            □□□□□□□□□□   0%
+- Testing                □□□□□□□□□□   0%
+
+## 🛡️ Critical Standards
+
+### Technical Quality Standards
+| Category | Standards |
+|----------|-----------|
+| Type Safety | • No `any` types<br>• Explicit return types on functions<br>• Proper interface definitions |
+| Error Handling | • Try/catch blocks around async operations<br>• Graceful fallbacks<br>• Error logging |
+| Performance | • Proper component splitting<br>• Data fetching optimizations<br>• Bundle size monitoring |
+| Security | • Input validation<br>• Authentication checks<br>• CSRF protection |
+
+### Testing Coverage Requirements
+| Component Type | Minimum Coverage | Required Test Types |
+|----------------|------------------|---------------------|
+| UI Components | 80% | • Unit tests<br>• Snapshot tests |
+| Pages | 70% | • Loading states<br>• Error states<br>• Integration tests |
+| Animations | 90% | • Timing<br>• Interaction<br>• Fallbacks |
+| Media | 95% | • Loading<br>• Optimization<br>• Fallbacks |
+
+## 📝 Scratchpad
+
+### Current Tasks:
+[ ] Portfolio structure setup
+[ ] Project showcase implementation
+[ ] Visual enhancements integration
+
+### Notes:
+- Focus on visual impact and UX
+- Ensure mobile responsiveness
+- Optimize media loading
+
+### Next Steps:
+1. Review portfolio requirements
+2. Set up development environment
+3. Begin core feature implementation
+

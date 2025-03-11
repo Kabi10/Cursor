@@ -1,0 +1,1568 @@
+# Cursor Master Rules for Web Project Builders
+
+## 🔄 Project Type Selection
+Choose your project type from the list below to generate specific guidelines:
+
+- [ ] E-commerce Website
+- [ ] Business Website
+- [ ] Portfolio Website
+- [ ] Blog Website
+- [ ] News & Media Website
+- [ ] Social Media/Community Website
+- [ ] Educational Website
+- [ ] Entertainment/Streaming Website
+- [ ] Landing Page
+- [ ] Web Application/SaaS Platform
+
+## ⚠️ MANDATORY PRE-IMPLEMENTATION CHECKLIST ⚠️
+STOP! Before writing ANY code or suggesting ANY changes:
+
+1. 🔍 SEARCH FIRST (REQUIRED):
+   ```bash
+   # Document ALL search results below
+   grep_search "[feature keyword]" # Search for related functionality
+   file_search "[filename pattern]" # Search for similar files
+   list_dir "[relevant directory]" # List contents of relevant directories
+   ```
+
+2. 📝 DOCUMENT FINDINGS (REQUIRED):
+   ```markdown
+   ## Existing Files Found:
+   - [List all relevant files found with full paths]
+   - [Include file sizes and last modified dates if relevant]
+   
+   ## Existing Functionality:
+   - [Describe what already exists in detail]
+   - [Note any patterns or architectural approaches used]
+   
+   ## Gaps Identified:
+   - [List what's missing or needs enhancement]
+   - [Identify technical debt or issues in existing code]
+   
+   ## Implementation Decision Tree:
+   - Is there existing code that serves this purpose? [Yes/No]
+   - Can existing code be enhanced to meet requirements? [Yes/No]
+   - Is creating new code justified? [Yes/No, with reasoning]
+   
+   ## Proposed Approach:
+   - [ ] Enhance existing code at [file path]
+   - [ ] Create new files (requires detailed justification)
+   - [ ] Refactor existing code at [file path]
+   
+   ## Implementation Plan:
+   1. [First step with estimated effort]
+   2. [Second step with estimated effort]
+   3. [Additional steps as needed]
+   ```
+
+3. ✋ WAIT FOR APPROVAL:
+   - Present findings to user with clear options
+   - Get explicit approval for chosen approach
+   - Never proceed with new files if similar functionality exists
+   - Document approval in the implementation plan
+
+❌ IF YOU SKIP THIS CHECKLIST, YOU ARE VIOLATING THE MOST IMPORTANT RULE ❌
+
+## 📚 AI Instructions
+
+As an AI code builder, this document serves as your complete guide for building or extending a Next.js web project. The rules below define HOW you should approach implementation regardless of project type:
+
+1. **Decision Protocol**: Before implementing any feature:
+   - First search for existing code and patterns
+   - Show clear options with tradeoffs
+   - Wait for explicit approval
+   - Document your decision-making process
+
+2. **Context Management**:
+   - Maintain a mental map of the project architecture
+   - Reference existing patterns when suggesting solutions
+   - Track technical debt and refactoring opportunities
+   - Keep your internal representation of the codebase updated
+
+3. **Implementation Approach**:
+   - Follow the pattern recognition guidelines
+   - Use established project patterns over introducing new ones
+   - Provide "why" explanations along with code
+   - Tag all implementation decisions with appropriate decision factors
+
+4. **Uncertainty Protocol**:
+   - When encountering ambiguity, present options with pros/cons
+   - Explicitly flag incomplete knowledge ("This appears to be ___, but I need more context")
+   - Use specified formats for indicating uncertainty levels
+   - Provide specific questions to resolve key uncertainties
+
+## 🧠 Common Pattern Recognition Map
+
+### Universal Code Structure Patterns
+- **Server-Component Pattern**: `async function Page/Component({ params }) + await fetch/db` 
+- **Client-Interactive Pattern**: `'use client'; useState/useEffect + event handlers`
+- **Data-Fetch Pattern**: `getData` functions paired with React Server Components
+- **Layout Pattern**: Hierarchical layouts with global elements in parent layouts
+
+### Universal Implementation Patterns
+- **Auth Flow Pattern**: Server-side session checking → client-side UI states
+- **Data Display Pattern**: Skeleton loading → data fetch → render with error boundaries
+- **Form Pattern**: Zod schema → form component → server action → response handling
+- **Filter Pattern**: URL-based state → server-side filtering → paginated results
+
+## 📊 Project Progress Dashboard
+Overall Progress: 0% Complete
+- Setup & Configuration    □□□□□□□□□□   0%
+- Core Features           □□□□□□□□□□   0%
+- Admin Dashboard         □□□□□□□□□□   0%
+- User Features           □□□□□□□□□□   0%
+- Advanced Features       □□□□□□□□□□   0%
+- Testing & Deployment    □□□□□□□□□□   0%
+- Post-Launch             □□□□□□□□□□   0%
+
+## 🔧 Project Type Specific Rules
+
+<!-- PROJECT TYPE SPECIFIC RULES WILL BE GENERATED HERE BASED ON SELECTION -->
+
+## 📝 Instructions
+
+- Record fixes for mistakes or corrections to avoid repetition in the `Lessons` section.
+- Organize thoughts and plan steps before starting a task in the `Scratchpad` section.
+- Clear old tasks if necessary.
+- Use todo markers for progress tracking:
+  - `[X]` Completed tasks
+  - `[ ]` Pending tasks
+- Update Scratchpad after completing subtasks.
+- Reflect and plan after milestones for better task management.
+- Always refer to Scratchpad before planning the next step.
+- ALWAYS CHECK FOR EXISTING FILES BEFORE CREATING NEW ONES TO AVOID DUPLICATES.
+
+## 🎓 Universal Lessons
+
+### 🖥️ UI/UX Implementation Patterns
+- Use `npx shadcn@latest add [component]` for Shadcn UI components
+- Maintain consistent page layouts (p-6 padding, mb-8 header spacing)
+- For loading states: create skeleton components, use Suspense, show indicators for async operations
+- For forms: handle loading states with local state, disable inputs during submission
+- For filters/search: use URL params, implement debouncing, create separate filter components
+
+### 🔄 Next.js Architecture Patterns
+- Page props params must be typed as a Promise in Next.js 14+
+- Use `const session = await auth()` instead of `getServerSession(authOptions)`
+- Mark components using `useRouter` with `'use client'` directive
+- Components using `useSearchParams()` must be client components wrapped in Suspense
+- When using dynamic imports with `next/dynamic`, set `ssr: false` for client-only components
+- For client-side state: extract state display into client components, use dynamic imports with `ssr: false`
+- Pass search params as props from server components instead of using `useSearchParams()` directly
+- Handle auth properly: use middleware for protection, include callback URLs, use role-based access
+
+### 🧪 Testing Implementation Patterns
+- Use `jest.resetAllMocks` (without parentheses) in beforeEach blocks when mocking Next.js hooks
+- Always use `bcryptjs` instead of `bcrypt` in tests to avoid native dependencies
+- When mocking API handlers, use inline functions instead of `.mockImplementation()`
+- For dialog components, always provide `aria-describedby` attribute to avoid accessibility warnings
+- Use `jest.spyOn` for functions that need to be restored after tests
+- Mock Next.js hooks like `useRouter` at the module level with `jest.mock('next/navigation')`
+- When mocking `useRouter`, use `jest.mocked(useRouter).mockReturnValue()` instead of casting to `jest.Mock`
+- Initialize mocks with default values: `jest.mock('next/navigation', () => ({ useRouter: jest.fn(() => ({ push: jest.fn() })) }))`
+
+### 🛠️ Process Implementation Requirements
+- ALWAYS check for existing implementations before creating new files
+- Use grep_search/file_search to look for similar file names and functionality
+- Document search process in scratchpad before implementing features
+- NEVER skip the pre-implementation checklist to avoid duplicate code
+- Implement parallel components when dependencies allow
+- Use consistent patterns across similar file types
+- Create independent files first to avoid blocking dependencies
+- Leverage existing templates and patterns when available
+- Document implementation decisions for future reference
+- Split implementation from deployment for faster iteration
+
+## 🧩 Implementation Templates
+
+### Server Component Template
+```tsx
+export async function PageComponent({ 
+  params,
+  searchParams 
+}: {
+  params: { id: string },
+  searchParams: { [key: string]: string | string[] | undefined }
+}) {
+  // Data fetching
+  const data = await getData(searchParams);
+  
+  // Error handling
+  if (!data) {
+    return <ErrorComponent message="Failed to load data" />;
+  }
+  
+  return (
+    <div className="p-6">
+      <h1 className="text-2xl font-bold mb-8">Page Title</h1>
+      
+      {/* Suspense boundary for client components */}
+      <Suspense fallback={<LoadingSkeleton />}>
+        <ContentComponent data={data} />
+      </Suspense>
+    </div>
+  );
+}
+```
+
+### Client Component Template
+```tsx
+'use client';
+
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+
+export default function InteractiveComponent({ 
+  initialData,
+  onDataChange 
+}: ComponentProps) {
+  // Local state
+  const [data, setData] = useState(initialData);
+  const router = useRouter();
+  
+  // Event handlers
+  const handleChange = (name: string, value: string) => {
+    const newData = { ...data, [name]: value };
+    setData(newData);
+    
+    // Update URL params
+    const params = new URLSearchParams();
+    Object.entries(newData).forEach(([key, value]) => {
+      if (value) params.set(key, value);
+    });
+    
+    router.push(`?${params.toString()}`);
+    if (onDataChange) onDataChange(newData);
+  };
+  
+  return (
+    <div className="space-y-4">
+      {/* UI components */}
+    </div>
+  );
+}
+```
+
+### Data Fetching Template
+```tsx
+// In lib/data.ts
+export async function getData(
+  filters: Record<string, string | string[] | undefined>
+) {
+  try {
+    const { param1, param2, sort } = filters;
+    
+    // Build query
+    const query = {
+      where: {},
+      orderBy: {},
+      include: { related: true }
+    };
+    
+    if (param1) {
+      query.where.param1 = param1.toString();
+    }
+    
+    if (param2) {
+      query.where.param2 = param2.toString();
+    }
+    
+    if (sort) {
+      const [field, direction] = sort.toString().split('-');
+      query.orderBy[field] = direction;
+    }
+    
+    // Execute query (with error handling and timeout)
+    const data = await prisma.model.findMany(query);
+    return data;
+  } catch (error) {
+    console.error("Failed to fetch data:", error);
+    return null;
+  }
+}
+```
+
+## 🛡️ Critical Standards
+
+### Technical Quality Standards
+| Category | Standards |
+|----------|-----------|
+| Type Safety | • No `any` types<br>• Explicit return types on functions<br>• Proper interface definitions |
+| Error Handling | • Try/catch blocks around async operations<br>• Graceful fallbacks<br>• Error logging |
+| Performance | • Proper component splitting<br>• Data fetching optimizations<br>• Bundle size monitoring |
+| Security | • Input validation<br>• Authentication checks<br>• CSRF protection |
+
+### Testing Coverage Requirements
+| Component Type | Minimum Coverage | Required Test Types |
+|----------------|------------------|---------------------|
+| UI Components | 80% | • Unit tests<br>• Snapshot tests |
+| Pages | 70% | • Loading states<br>• Error states<br>• Integration tests |
+| API Routes | 90% | • Input validation<br>• Auth checks<br>• Error handling |
+| Utility Functions | 95% | • Unit tests<br>• Edge cases |
+| State Management | 85% | • State transitions<br>• Side effects |
+
+### Environment Configuration Standard
+```
+.env                  # Local development variables (NOT committed)
+.env.example          # Template with all required variables (committed)
+.env.production       # Production variables template (committed)
+```
+
+### Required Environment Variables Map
+| Variable | Purpose | Required In |
+|----------|---------|-------------|
+| `DATABASE_URL` | Database connection string | All environments |
+| `NEXTAUTH_SECRET` | Authentication encryption key | All environments |
+| `NEXTAUTH_URL` | Base URL for authentication | All environments |
+| `NEXT_PUBLIC_APP_URL` | Public-facing application URL | All environments |
+| `GOOGLE_CLIENT_ID` | OAuth authentication | If using Google auth |
+| `GOOGLE_CLIENT_SECRET` | OAuth authentication | If using Google auth |
+| `GITHUB_CLIENT_ID` | OAuth authentication | If using GitHub auth |
+| `GITHUB_CLIENT_SECRET` | OAuth authentication | If using GitHub auth |
+| `STRIPE_SECRET_KEY` | Payment processing | If using Stripe |
+| `STRIPE_WEBHOOK_SECRET` | Payment webhooks | If using Stripe |
+| `RESEND_API_KEY` | Email service | If using Resend |
+| `UPLOADTHING_SECRET` | File uploads | If using Uploadthing |
+| `UPLOADTHING_APP_ID` | File uploads | If using Uploadthing |
+
+## 📊 Technical Debt Tracking
+
+### Debt Classification System
+| Category | Definition | Resolution Priority |
+|----------|------------|---------------------|
+| Critical | Breaks functionality or security vulnerability | IMMEDIATE |
+| Major | Affects user experience or performance | HIGH |
+| Minor | Code quality or maintainability issue | MEDIUM |
+| Refactor | Improved implementation possible | LOW |
+
+### Tracking Format
+```
+## Technical Debt Item
+- **Location**: [file path]
+- **Category**: [Critical/Major/Minor/Refactor]
+- **Description**: [Brief description of the issue]
+- **Impact**: [How it affects the system]
+- **Resolution Path**: [Steps to fix]
+- **Estimated Effort**: [T-shirt size: XS/S/M/L/XL]
+```
+
+## 🔍 Code Quality Metrics
+
+### Performance Budgets
+- Page Load: < 3s on 4G
+- First Contentful Paint: < 1.5s
+- Bundle Size: < 200KB initial JS
+- API Response: < 300ms
+- Core Web Vitals minimum:
+  - LCP: < 2.5s
+  - FID: < 100ms
+  - CLS: < 0.1
+
+### Code Complexity Limits
+- Function complexity: < 15 cognitive complexity
+- File size: < 400 lines
+- Function length: < 50 lines
+- Component props: < 10 props
+- Nesting depth: < 4 levels in JSX
+
+## 📋 Scratchpad
+
+### PROJECT TYPE SPECIFIC IMPLEMENTATION PLANS WILL BE GENERATED HERE
+
+## 🚀 Project Type Generators
+
+### E-commerce Website Generator
+```javascript
+function generateEcommerceRules() {
+  return `
+## 🗺️ E-commerce Project Architecture Map
+
+\`\`\`
+┌─ User Interface Layer ───────────────┐      ┌─ Data Access Layer ─┐
+│                                      │      │                     │
+│  ┌─ Page Components ─────────────┐   │      │  ┌─ API Routes ──┐  │
+│  │ - Product Pages              │   │      │  │ - REST API    │  │
+│  │ - Category Pages             │   │      │  │ - Server      │  │
+│  │ - Checkout Flow              │   │      │  │   Actions     │  │
+│  └───────────────────────────────┘   │      │  └──────────────┘  │
+│                                      │      │                     │
+│  ┌─ Client Components ────────────┐  │      │  ┌─ Database ────┐  │
+│  │ - Product Filters              │◄─┼──────┼─►│ - Products    │  │
+│  │ - Cart Components              │  │      │  │ - Orders      │  │
+│  │ - Payment Forms                │  │      │  │ - Users       │  │
+│  └───────────────────────────────┘  │      │  └──────────────┘  │
+│                                      │      │                     │
+└──────────────────────────────────────┘      └─────────────────────┘
+
+┌─ E-commerce Specific Concerns ───────────────────────────────────┐
+│                                                                   │
+│  ┌─ Cart System ─────┐  ┌─ Payment ─────────┐  ┌─ Catalog ─────┐ │
+│  │ - Zustand Store   │  │ - Stripe/PayPal   │  │ - Categories  │ │
+│  │ - Persistence     │  │ - Checkout Flow   │  │ - Filters     │ │
+│  │ - Cart Operations │  │ - Order Creation  │  │ - Search      │ │
+│  └─────────────────┘  └──────────────────┘  └─────────────────┘ │
+│                                                                   │
+└───────────────────────────────────────────────────────────────────┘
+\`\`\`
+
+## 📋 E-commerce Implementation Plan
+
+### Phase 1: E-commerce Setup and Configuration
+[ ] 1.1. Initial Setup
+    [ ] Create Next.js project with TypeScript
+    [ ] Configure ESLint and Prettier
+    [ ] Set up project structure with e-commerce folders
+    [ ] Initialize Git repository
+
+[ ] 1.2. E-commerce Dependencies Installation
+    [ ] Install Shadcn UI for e-commerce components
+    [ ] Set up Lucide icons
+    [ ] Install e-commerce specific dependencies
+        [ ] Add Zod for product/order validation
+        [ ] Add Zustand for cart state management
+        [ ] Add Stripe/PayPal for payments
+        [ ] Add Resend for order emails
+
+[ ] 1.3. E-commerce Data Model Setup
+    [ ] Configure database
+    [ ] Create Prisma schema for products, categories, orders
+    [ ] Set up authentication for customers
+    [ ] Create seed data for products and categories
+
+### Phase 2: Core E-commerce Features
+[ ] 2.1. Product Catalog
+    [ ] Product listing pages with filters and search
+    [ ] Product detail pages with image gallery
+    [ ] Category navigation
+    [ ] Reviews and ratings system
+
+[ ] 2.2. Shopping Cart
+    [ ] Create cart store with Zustand
+    [ ] Implement cart operations (add/remove/update)
+    [ ] Cart persistence across sessions
+    [ ] Cart summary and totals calculation
+
+[ ] 2.3. Checkout Process
+    [ ] Multi-step checkout flow
+    [ ] Address and shipping options
+    [ ] Payment integration
+    [ ] Order confirmation
+
+### Phase 3: E-commerce Admin Features
+[ ] 3.1. Product Management
+    [ ] Product CRUD operations
+    [ ] Inventory management
+    [ ] Product image uploads
+    [ ] Product variants and options
+
+[ ] 3.2. Order Management
+    [ ] Order listing and details
+    [ ] Order status updates
+    [ ] Order fulfillment process
+    [ ] Returns handling
+
+### Phase 4: E-commerce Advanced Features
+[ ] 4.1. Customer Features
+    [ ] Customer accounts
+    [ ] Order history
+    [ ] Wishlist functionality
+    [ ] Saved payment methods
+
+[ ] 4.2. Marketing Features
+    [ ] Promotions and discounts
+    [ ] Product recommendations
+    [ ] Email marketing integration
+    [ ] Social sharing
+
+## 🧠 E-commerce Pattern Recognition Map
+
+### E-commerce Feature Patterns
+- **Product Display Pattern**: Grid/List views → Filters → Pagination
+- **Cart Pattern**: Add to cart → Cart UI → Checkout flow
+- **Checkout Pattern**: Information → Shipping → Payment → Confirmation
+- **Order Pattern**: Create order → Process payment → Update inventory → Send confirmation
+- **Admin Pattern**: CRUD interfaces for products/orders/customers with validation
+- **Search Pattern**: Query input → Filter application → Sorted results
+`;
+}
+```
+
+### Business Website Generator
+```javascript
+function generateBusinessWebsiteRules() {
+  return `
+## 🗺️ Business Website Architecture Map
+
+\`\`\`
+┌─ Public Pages Layer ─────────────────┐      ┌─ Admin Layer ───────┐
+│                                      │      │                     │
+│  ┌─ Page Components ─────────────┐   │      │  ┌─ Dashboard ───┐  │
+│  │ - Home/Landing               │   │      │  │ - CMS Admin   │  │
+│  │ - Services/Products          │   │      │  │ - Analytics   │  │
+│  │ - About/Team                 │   │      │  │ - Content     │  │
+│  │ - Contact/Locations          │   │      │  │   Management  │  │
+│  └───────────────────────────────┘   │      │  └──────────────┘  │
+│                                      │      │                     │
+│  ┌─ Client Components ────────────┐  │      │  ┌─ Data Storage ┐  │
+│  │ - Testimonial Carousel         │◄─┼──────┼─►│ - Services    │  │
+│  │ - Contact Forms                │  │      │  │ - Team Members│  │
+│  │ - Service Showcases           │  │      │  │ - Testimonials│  │
+│  └───────────────────────────────┘  │      │  └──────────────┘  │
+│                                      │      │                     │
+└──────────────────────────────────────┘      └─────────────────────┘
+
+┌─ Business Website Specific Concerns ───────────────────────────────┐
+│                                                                     │
+│  ┌─ Lead Generation ─┐  ┌─ Content Strategy ──┐  ┌─ Conversion ──┐ │
+│  │ - Contact Forms   │  │ - Service Pages     │  │ - CTAs        │ │
+│  │ - CTA Design      │  │ - Case Studies      │  │ - Analytics   │ │
+│  │ - Form Submissions│  │ - Testimonials      │  │ - Tracking    │ │
+│  └─────────────────┘  └──────────────────┘  └─────────────────┘   │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
+\`\`\`
+
+## 📋 Business Website Implementation Plan
+
+### Phase 1: Business Website Setup
+[ ] 1.1. Initial Setup
+    [ ] Create Next.js project with TypeScript
+    [ ] Configure ESLint and Prettier
+    [ ] Set up project structure for business site
+    [ ] Initialize Git repository
+
+[ ] 1.2. Business Site Dependencies
+    [ ] Install Shadcn UI for business components
+    [ ] Set up animation libraries (Framer Motion)
+    [ ] Install business site specific dependencies
+        [ ] Add form handling libraries
+        [ ] Add CMS connection if needed
+        [ ] Add analytics packages
+
+[ ] 1.3. Content Architecture
+    [ ] Design content models (services, team, testimonials)
+    [ ] Create data schemas for business content
+    [ ] Set up CMS connection or local content storage
+    [ ] Create initial content structure
+
+### Phase 2: Core Business Pages
+[ ] 2.1. Key Pages
+    [ ] Home/landing page with value proposition
+    [ ] Services/Products pages with detailed information
+    [ ] About/Team pages to build trust
+    [ ] Contact page with form and location information
+
+[ ] 2.2. Interactive Elements
+    [ ] Contact forms with validation
+    [ ] Service filtering or categorization
+    [ ] Testimonial showcases
+    [ ] Call-to-action components
+
+[ ] 2.3. Navigation and Footer
+    [ ] Responsive navigation menu
+    [ ] Footer with contact info and sitemap
+    [ ] Legal pages (privacy policy, terms)
+    [ ] Site search functionality
+
+### Phase 3: Lead Generation Features
+[ ] 3.1. Contact System
+    [ ] Form submission handling
+    [ ] Email notification system
+    [ ] Lead tracking
+    [ ] CRM integration if needed
+
+[ ] 3.2. Conversion Optimization
+    [ ] Strategic CTA placement
+    [ ] A/B testing framework for messaging
+    [ ] Lead magnet delivery system
+    [ ] Analytics implementation
+
+### Phase 4: Content Management
+[ ] 4.1. Admin Interface
+    [ ] Content management dashboard
+    [ ] User management for staff
+    [ ] Content preview functionality
+    [ ] Publishing workflow
+
+[ ] 4.2. SEO Features
+    [ ] SEO metadata management
+    [ ] Sitemap generation
+    [ ] Structured data implementation
+    [ ] Performance optimization
+
+## 🧠 Business Website Pattern Recognition Map
+
+### Business Website Feature Patterns
+- **Value Proposition Pattern**: Hero → Benefits → Social Proof → CTA
+- **Service Display Pattern**: Overview → Details → Testimonials → Contact
+- **Team Display Pattern**: Leadership → Team Members → Hiring CTA
+- **Contact Pattern**: Form → Map → Alternative Contact Methods
+- **Testimonial Pattern**: Quote → Client Info → Associated Service
+- **CTA Pattern**: Problem Statement → Solution → Action Button
+`;
+}
+```
+
+### Portfolio Website Generator
+```javascript
+function generatePortfolioWebsiteRules() {
+  return `
+## 🗺️ Portfolio Website Architecture Map
+
+\`\`\`
+┌─ Showcase Layer ────────────────────┐      ┌─ Admin Layer ───────┐
+│                                      │      │                     │
+│  ┌─ Page Components ─────────────┐   │      │  ┌─ Dashboard ───┐  │
+│  │ - Home/Introduction          │   │      │  │ - Portfolio    │  │
+│  │ - Project Showcase           │   │      │  │   Management   │  │
+│  │ - About/Skills               │   │      │  │ - Analytics    │  │
+│  │ - Contact                    │   │      │  │ - Content      │  │
+│  └───────────────────────────────┘   │      │  │   Updates     │  │
+│                                      │      │  └──────────────┘  │
+│  ┌─ Client Components ────────────┐  │      │                     │
+│  │ - Project Gallery             │◄─┼──────┼─►┌─ Data Storage ┐  │
+│  │ - Skills Visualization        │  │      │  │ - Projects    │  │
+│  │ - Contact Form                │  │      │  │ - Skills      │  │
+│  │ - Animation Effects           │  │      │  │ - Testimonials│  │
+│  └───────────────────────────────┘  │      │  └──────────────┘  │
+│                                      │      │                     │
+└──────────────────────────────────────┘      └─────────────────────┘
+
+┌─ Portfolio Specific Concerns ────────────────────────────────────┐
+│                                                                   │
+│  ┌─ Visual Impact ───┐  ┌─ Project Showcase ─┐  ┌─ Personal ───┐ │
+│  │ - Animations      │  │ - Case Studies     │  │ - Bio        │ │
+│  │ - Image Gallery   │  │ - Project Details  │  │ - Skills     │ │
+│  │ - Typography      │  │ - Results/Metrics  │  │ - Resume     │ │
+│  └─────────────────┘  └──────────────────┘  └─────────────────┘ │
+│                                                                   │
+└───────────────────────────────────────────────────────────────────┘
+\`\`\`
+
+## 📋 Portfolio Website Implementation Plan
+
+### Phase 1: Portfolio Setup
+[ ] 1.1. Initial Setup
+    [ ] Create Next.js project with TypeScript
+    [ ] Configure ESLint and Prettier
+    [ ] Set up project structure for portfolio
+    [ ] Initialize Git repository
+
+[ ] 1.2. Portfolio Dependencies
+    [ ] Install Shadcn UI for portfolio components
+    [ ] Set up animation libraries (Framer Motion)
+    [ ] Install portfolio specific dependencies
+        [ ] Add image gallery components
+        [ ] Add motion/animation libraries
+        [ ] Add form handling for contact
+
+[ ] 1.3. Content Structure
+    [ ] Design projects data model
+    [ ] Create skills and experience schema
+    [ ] Set up personal information storage
+    [ ] Create initial content structure
+
+### Phase 2: Core Portfolio Pages
+[ ] 2.1. Home and Introduction
+    [ ] Hero section with personal brand
+    [ ] Featured projects section
+    [ ] Skills overview
+    [ ] Brief introduction
+
+[ ] 2.2. Projects Showcase
+    [ ] Projects listing/grid
+    [ ] Project detail pages
+    [ ] Case study templates
+    [ ] Filterable project categories
+
+[ ] 2.3. About and Contact
+    [ ] Personal bio and history
+    [ ] Skills visualization
+    [ ] Experience timeline
+    [ ] Contact form with validation
+
+### Phase 3: Visual Enhancements
+[ ] 3.1. Animation and Interactivity
+    [ ] Scroll animations
+    [ ] Interactive elements
+    [ ] Page transitions
+    [ ] Loading animations
+
+[ ] 3.2. Media Optimization
+    [ ] Image galleries
+    [ ] Video integration
+    [ ] Responsive media handling
+    [ ] Lazy loading implementation
+
+### Phase 4: Portfolio Management
+[ ] 4.1. Project Management
+    [ ] Admin interface for projects
+    [ ] Content editing capabilities
+    [ ] Image upload and management
+    [ ] Draft and publishing workflow
+
+[ ] 4.2. Experience Features
+    [ ] Resume download option
+    [ ] Testimonials section
+    [ ] Contact form with email notification
+    [ ] Social media integration
+
+## 🧠 Portfolio Website Pattern Recognition Map
+
+### Portfolio Feature Patterns
+- **Introduction Pattern**: Visual Impact → Personal Brand → Key Skills → CTA
+- **Project Display Pattern**: Thumbnail → Brief → Technologies → Details Link
+- **Project Detail Pattern**: Overview → Problem → Solution → Results → Next Project
+- **Skills Pattern**: Categories → Visualization → Experience Level → Examples
+- **Contact Pattern**: Brief Message → Form → Alternative Contact Methods
+- **Personal Brand Pattern**: Consistent Typography → Color Scheme → Visual Style
+`;
+}
+```
+
+### Blog Website Generator
+```javascript
+function generateBlogWebsiteRules() {
+  return `
+## 🗺️ Blog Website Architecture Map
+
+\`\`\`
+┌─ Public Pages Layer ─────────────────┐      ┌─ Admin Layer ───────┐
+│                                      │      │                     │
+│  ┌─ Page Components ─────────────┐   │      │  ┌─ Dashboard ───┐  │
+│  │ - Homepage                    │   │      │  │ - Content     │  │
+│  │ - Article Pages               │   │      │  │   Management  │  │
+│  │ - Category Archives           │   │      │  │ - Analytics   │  │
+│  │ - Author Pages                │   │      │  │ - Comments    │  │
+│  └───────────────────────────────┘   │      │  │   Moderation  │  │
+│                                      │      │  └──────────────┘  │
+│  ┌─ Client Components ────────────┐  │      │                     │
+│  │ - Comment System               │◄─┼──────┼─►┌─ Data Storage ┐  │
+│  │ - Newsletter Signup           │  │      │  │ - Articles    │  │
+│  │ - Search Interface            │  │      │  │ - Categories  │  │
+│  │ - Social Sharing              │  │      │  │ - Comments    │  │
+│  └───────────────────────────────┘  │      │  │ - Users       │  │
+│                                      │      │  └──────────────┘  │
+└──────────────────────────────────────┘      └─────────────────────┘
+
+## 🗺️ Blog Specific Concerns ───────────────────────────────────────────┐
+│                                                                       │
+│  ┌─ Content Management ┐  ┌─ Reader Engagement ─┐  ┌─ Monetization ┐ │
+│  │ - Post Creation     │  │ - Comments System   │  │ - Ads         │ │
+│  │ - Categories/Tags   │  │ - Newsletter        │  │ - Memberships │ │
+│  │ - Media Library     │  │ - Social Sharing    │  │ - Affiliates  │ │
+│  └─────────────────────┘  └────────────────────┘  └────────────────┘ │
+│                                                                       │
+└───────────────────────────────────────────────────────────────────────┘
+```
+
+## 📋 Blog Website Implementation Plan
+
+### Phase 1: Blog Setup
+[ ] 1.1. Initial Setup
+    [ ] Create Next.js project with TypeScript
+    [ ] Configure ESLint and Prettier
+    [ ] Set up project structure for blog
+    [ ] Initialize Git repository
+
+[ ] 1.2. Blog Dependencies
+    [ ] Install Shadcn UI for blog components
+    [ ] Set up MDX or content management system
+    [ ] Install blog specific dependencies
+        [ ] Add markdown processing libraries
+        [ ] Add syntax highlighting for code blocks
+        [ ] Add comment system components
+
+[ ] 1.3. Content Structure
+    [ ] Design blog post data model
+    [ ] Create category and tag schema
+    [ ] Set up author profiles structure
+    [ ] Create initial content organization
+
+### Phase 2: Core Blog Pages
+[ ] 2.1. Home and Archives
+    [ ] Blog homepage with featured posts
+    [ ] Category and tag archive pages
+    [ ] Author profile pages
+    [ ] Search results page
+
+[ ] 2.2. Article Pages
+    [ ] Article template with metadata
+    [ ] Related posts section
+    [ ] Comment section
+    [ ] Social sharing functionality
+
+[ ] 2.3. Navigation and Discovery
+    [ ] Category navigation
+    [ ] Tag cloud component
+    [ ] Featured and popular posts
+    [ ] Search functionality
+
+### Phase 3: Reader Engagement
+[ ] 3.1. Comments System
+    [ ] Comment submission and display
+    [ ] Nested replies functionality
+    [ ] Comment moderation dashboard
+    [ ] User authentication for comments
+
+[ ] 3.2. Subscription Features
+    [ ] Newsletter signup form
+    [ ] Subscription management
+    [ ] Email notification system
+    [ ] Membership features (if applicable)
+
+### Phase 4: Content Management
+[ ] 4.1. Admin Dashboard
+    [ ] Content creation interface
+    [ ] Editorial workflow
+    [ ] Media management
+    [ ] Analytics dashboard
+
+[ ] 4.2. SEO and Distribution
+    [ ] SEO metadata management
+    [ ] RSS feed generation
+    [ ] Social media integration
+    [ ] Structured data implementation
+
+## 🧠 Blog Website Pattern Recognition Map
+
+### Blog Feature Patterns
+- **Article Display Pattern**: Header → Content → Author Bio → Related Posts
+- **Category Pattern**: Title → Description → Featured Post → Post Grid
+- **Comment Pattern**: Comment Form → Thread → Nested Replies → Moderation
+- **Archive Pattern**: Filter Controls → Chronological Posts → Pagination
+- **Author Pattern**: Bio → Featured Work → Contact Info → Article List
+- **Search Pattern**: Query Input → Filter Options → Sorted Results → Refinement
+
+### News & Media Website Generator
+```javascript
+function generateNewsWebsiteRules() {
+  return `
+## 🗺️ News & Media Website Architecture Map
+
+\`\`\`
+┌─ Public Pages Layer ─────────────────┐      ┌─ Admin & Publishing Layer ─┐
+│                                      │      │                            │
+│  ┌─ Page Components ─────────────┐   │      │  ┌─ Dashboard ──────────┐  │
+│  │ - Homepage/Sections          │   │      │  │ - Editorial Workflow  │  │
+│  │ - Article Pages              │   │      │  │ - Content Management  │  │
+│  │ - Topic/Category Pages       │   │      │  │ - User Management     │  │
+│  │ - Live Updates/Breaking      │   │      │  │ - Analytics           │  │
+│  └───────────────────────────────┘   │      │  └─────────────────────┘  │
+│                                      │      │                            │
+│  ┌─ Client Components ────────────┐  │      │  ┌─ Data Storage ────────┐  │
+│  │ - Live Updates Feed           │◄─┼──────┼─►│ - Articles             │  │
+│  │ - Comment System              │  │      │  │ - Categories/Topics    │  │
+│  │ - Media Galleries             │  │      │  │ - Authors/Contributors │  │
+│  │ - Subscription Modules        │  │      │  │ - Multimedia Assets    │  │
+│  └───────────────────────────────┘  │      │  └─────────────────────┘  │
+│                                      │      │                            │
+└──────────────────────────────────────┘      └────────────────────────────┘
+
+┌─ News & Media Specific Concerns ─────────────────────────────────────────┐
+│                                                                          │
+│  ┌─ Editorial Management ┐  ┌─ Reader Engagement ─┐  ┌─ Monetization ──┐ │
+│  │ - Breaking News       │  │ - Comments System   │  │ - Subscriptions │ │
+│  │ - Topic Organization  │  │ - Newsletter        │  │ - Advertising   │ │
+│  │ - Multimedia Content  │  │ - Social Sharing    │  │ - Premium       │ │
+│  │ - Fact Checking       │  │ - User Accounts     │  │   Content       │ │
+│  └─────────────────────┘  └────────────────────┘  └──────────────────┘ │
+│                                                                          │
+└──────────────────────────────────────────────────────────────────────────┘
+\`\`\`
+
+## 📋 News & Media Website Implementation Plan
+
+### Phase 1: News Platform Setup
+[ ] 1.1. Initial Setup
+    [ ] Create Next.js project with TypeScript
+    [ ] Configure ESLint and Prettier
+    [ ] Set up project structure for news platform
+    [ ] Initialize Git repository
+
+[ ] 1.2. News Platform Dependencies
+    [ ] Install Shadcn UI for news components
+    [ ] Set up content management system
+    [ ] Install news platform specific dependencies
+        [ ] Add real-time update libraries
+        [ ] Add media processing tools
+        [ ] Add paywall/subscription components if needed
+
+[ ] 1.3. Content Structure
+    [ ] Design article data model with metadata
+    [ ] Create topics/categories taxonomy
+    [ ] Set up author/contributor profiles
+    [ ] Create multimedia asset management
+
+### Phase 2: Core News Pages
+[ ] 2.1. Homepage and Sections
+    [ ] News homepage with featured stories
+    [ ] Section/category landing pages
+    [ ] Breaking news alerts component
+    [ ] Trending stories module
+
+[ ] 2.2. Article Pages
+    [ ] Article template with rich media support
+    [ ] Related stories section
+    [ ] Author byline and information
+    [ ] Social sharing and engagement tools
+
+[ ] 2.3. Discovery and Navigation
+    [ ] Advanced search functionality
+    [ ] Topic/category navigation
+    [ ] Most read/trending navigation
+    [ ] Archive access and date-based navigation
+
+### Phase 3: Audience Engagement
+[ ] 3.1. User Interaction
+    [ ] Comment system with moderation
+    [ ] Newsletter and alert signup
+    [ ] Social sharing optimization
+    [ ] User account management
+
+[ ] 3.2. Subscription Features
+    [ ] Metered paywall implementation
+    [ ] Subscription management
+    [ ] Premium content designation
+    [ ] Member-only features
+
+### Phase 4: Publishing Workflow
+[ ] 4.1. Editorial System
+    [ ] Content creation interface
+    [ ] Editorial review workflow
+    [ ] Scheduled publishing
+    [ ] Breaking news fast-track
+
+[ ] 4.2. Analytics and Optimization
+    [ ] Reader analytics dashboard
+    [ ] Content performance metrics
+    [ ] A/B testing framework
+    [ ] SEO optimization tools
+
+## 🧠 News & Media Pattern Recognition Map
+
+### News Feature Patterns
+- **Homepage Pattern**: Breaking News → Featured Stories → Section Blocks → Trending
+- **Article Pattern**: Headline → Summary → Content → Related Stories
+- **Section Pattern**: Section Header → Featured → Latest News → Archive Link
+- **Breaking News Pattern**: Alert Banner → Breaking Label → Timestamp → Update Frequency
+- **Media Pattern**: Gallery → Caption → Credit → Related Story
+- **Topic Pattern**: Topic Header → Definition → Related Stories → Expert Voices
+```
+
+### Social Media/Community Website Generator
+```javascript
+function generateSocialMediaWebsiteRules() {
+  return `
+## 🗺️ Social Media/Community Website Architecture Map
+
+\`\`\`
+┌─ User Interface Layer ──────────────┐       ┌─ Backend Layer ────────┐
+│                                     │       │                        │
+│  ┌─ Page Components ────────────┐   │       │  ┌─ API Routes ─────┐  │
+│  │ - Feed/Timeline             │   │       │  │ - Auth API        │  │
+│  │ - Profile Pages             │   │       │  │ - Content API     │  │
+│  │ - Groups/Communities        │   │       │  │ - Social API      │  │
+│  │ - Notifications             │   │       │  │ - Analytics API   │  │
+│  └──────────────────────────────┘   │       │  └─────────────────┘  │
+│                                     │       │                        │
+│  ┌─ Client Components ───────────┐  │       │  ┌─ Data Storage ───┐  │
+│  │ - Post Creator               │◄─┼───────┼─►│ - User Profiles   │  │
+│  │ - Comment Threads            │  │       │  │ - Posts/Content   │  │
+│  │ - Real-time Updates          │  │       │  │ - Interactions    │  │
+│  │ - Message Components         │  │       │  │ - Media Assets    │  │
+│  └──────────────────────────────┘  │       │  └─────────────────┘  │
+│                                     │       │                        │
+└─────────────────────────────────────┘       └────────────────────────┘
+
+┌─ Social Media Specific Concerns ─────────────────────────────────────┐
+│                                                                      │
+│  ┌─ User Interactions ─┐  ┌─ Content Management ┐  ┌─ Community ───┐ │
+│  │ - Likes/Reactions   │  │ - Post Creation     │  │ - Media Uploads │ │
+│  │ - Comments          │  │ - Media Uploads     │  │ - Moderation    │ │
+│  │ - Sharing           │  │ - Content Discovery │  │ - Reporting     │ │
+│  │ - Following         │  │ - Feed Algorithms   │  │ - Governance    │ │
+│  └────────────────────┘  └────────────────────┘  └────────────────┘ │
+│                                                                      │
+└──────────────────────────────────────────────────────────────────────┘
+\`\`\`
+
+## 📋 Social Media/Community Website Implementation Plan
+
+### Phase 1: Platform Setup
+[ ] 1.1. Initial Setup
+    [ ] Create Next.js project with TypeScript
+    [ ] Configure ESLint and Prettier
+    [ ] Set up project structure for social platform
+    [ ] Initialize Git repository
+
+[ ] 1.2. Social Platform Dependencies
+    [ ] Install Shadcn UI for social components
+    [ ] Set up real-time functionalities
+    [ ] Install platform specific dependencies
+        [ ] Add WebSocket libraries
+        [ ] Add media processing tools
+        [ ] Add authentication solutions
+
+[ ] 1.3. Data Models
+    [ ] Design user profile model
+    [ ] Create post/content schema
+    [ ] Set up interaction data models
+    [ ] Define community/group structures
+
+### Phase 2: Core Social Features
+[ ] 2.1. User Authentication
+    [ ] User registration and login
+    [ ] Profile creation and customization
+    [ ] Follow/connection system
+    [ ] User discovery
+
+[ ] 2.2. Content Creation
+    [ ] Post creation interface
+    [ ] Media upload and processing
+    [ ] Rich text formatting
+    [ ] Tagging and mentions
+
+[ ] 2.3. Feed and Timeline
+    [ ] Content feed algorithms
+    [ ] Real-time updates
+    [ ] Infinite scrolling
+    [ ] Content filtering
+
+### Phase 3: Interaction Features
+[ ] 3.1. Social Interactions
+    [ ] Likes/reactions system
+    [ ] Comment threads with nesting
+    [ ] Content sharing mechanisms
+    [ ] Notification system
+
+[ ] 3.2. Messaging
+    [ ] Direct messaging interface
+    [ ] Group conversations
+    [ ] Media sharing in messages
+    [ ] Read receipts and typing indicators
+
+### Phase 4: Community Management
+[ ] 4.1. Groups and Communities
+    [ ] Group creation and management
+    [ ] Member roles and permissions
+    [ ] Group content creation
+    [ ] Group discovery
+
+[ ] 4.2. Moderation Tools
+    [ ] Content moderation queue
+    [ ] Reporting system
+    [ ] User sanctions
+    [ ] Community guidelines enforcement
+
+## 🧠 Social Media/Community Pattern Recognition Map
+
+### Social Feature Patterns
+- **Feed Pattern**: Algorithm → Content Cards → Interaction Controls → Load More
+- **Profile Pattern**: Header → Bio → Activity Feed → Connection Controls
+- **Post Pattern**: Author → Content → Media → Interactions → Comments
+- **Comment Pattern**: Nested Threading → Reactions → Reply Controls → Moderation
+- **Group Pattern**: Header → Description → Member List → Content Feed
+- **Notification Pattern**: Activity Type → Actor → Object → Timestamp → Action
+```
+
+### Educational Website Generator
+```javascript
+function generateEducationalWebsiteRules() {
+  return `
+## 🗺️ Educational Website Architecture Map
+
+\`\`\`
+┌─ Learning Interface Layer ───────────┐      ┌─ Admin & Content Layer ──┐
+│                                      │      │                          │
+│  ┌─ Page Components ─────────────┐   │      │  ┌─ Dashboard ────────┐  │
+│  │ - Course Catalog             │   │      │  │ - Content Creation  │  │
+│  │ - Lesson Pages               │   │      │  │ - Student Management│  │
+│  │ - Quiz/Assessment Pages      │   │      │  │ - Progress Tracking │  │
+│  │ - Discussion Forums          │   │      │  │ - Analytics         │  │
+│  └───────────────────────────────┘   │      │  └────────────────────┘  │
+│                                      │      │                          │
+│  ┌─ Client Components ────────────┐  │      │  ┌─ Data Storage ──────┐  │
+│  │ - Interactive Exercises       │◄─┼──────┼─►│ - Courses/Lessons    │  │
+│  │ - Progress Tracking           │  │      │  │ - User Profiles      │  │
+│  │ - Quiz Components             │  │      │  │ - Assessments        │  │
+│  │ - Media Players               │  │      │  │ - Learning Materials │  │
+│  └───────────────────────────────┘  │      │  └────────────────────┘  │
+│                                      │      │                          │
+└──────────────────────────────────────┘      └──────────────────────────┘
+
+┌─ Educational Specific Concerns ─────────────────────────────────────────┐
+│                                                                         │
+│  ┌─ Learning Path ─────┐  ┌─ Assessment ─────────┐  ┌─ Community ─────┐ │
+│  │ - Course Structure  │  │ - Quizzes            │  │ - Forums        │ │
+│  │ - Progress Tracking │  │ - Assignments        │  │ - Study Groups  │ │
+│  │ - Prerequisites     │  │ - Certifications     │  │ - Peer Review   │ │
+│  │ - Learning Outcomes │  │ - Grading            │  │ - Mentorship    │ │
+│  └────────────────────┘  └─────────────────────┘  └──────────────────┘ │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+\`\`\`
+
+## 📋 Educational Website Implementation Plan
+
+### Phase 1: Learning Platform Setup
+[ ] 1.1. Initial Setup
+    [ ] Create Next.js project with TypeScript
+    [ ] Configure ESLint and Prettier
+    [ ] Set up project structure for learning platform
+    [ ] Initialize Git repository
+
+[ ] 1.2. Educational Platform Dependencies
+    [ ] Install Shadcn UI for educational components
+    [ ] Set up content management system
+    [ ] Install platform specific dependencies
+        [ ] Add interactive exercise libraries
+        [ ] Add video player components
+        [ ] Add quiz/assessment tools
+
+[ ] 1.3. Content Structure
+    [ ] Design course and lesson data models
+    [ ] Create assessment and quiz schemas
+    [ ] Set up user profile and progress tracking
+    [ ] Define learning path structures
+
+### Phase 2: Core Learning Features
+[ ] 2.1. Course Management
+    [ ] Course catalog with filtering
+    [ ] Course enrollment system
+    [ ] Lesson sequencing
+    [ ] Learning path visualization
+
+[ ] 2.2. Content Delivery
+    [ ] Lesson page templates
+    [ ] Rich media integration
+    [ ] Interactive elements
+    [ ] Resource downloads
+
+[ ] 2.3. Assessment System
+    [ ] Quiz creation and delivery
+    [ ] Assignment submission
+    [ ] Automated grading
+    [ ] Progress tracking
+
+### Phase 3: User Engagement
+[ ] 3.1. Learning Community
+    [ ] Discussion forums
+    [ ] Q&A sections
+    [ ] Study groups
+    [ ] Peer feedback system
+
+[ ] 3.2. Student Experience
+    [ ] Dashboard with progress
+    [ ] Bookmarking and notes
+    [ ] Certification system
+    [ ] Personalized recommendations
+
+### Phase 4: Administration
+[ ] 4.1. Instructor Tools
+    [ ] Course creation interface
+    [ ] Student management
+    [ ] Grading dashboard
+    [ ] Announcements system
+
+[ ] 4.2. Analytics
+    [ ] Student progress analytics
+    [ ] Content effectiveness metrics
+    [ ] Engagement reporting
+    [ ] Assessment statistics
+
+## 🧠 Educational Website Pattern Recognition Map
+
+### Educational Feature Patterns
+- **Course Display Pattern**: Overview → Syllabus → Instructors → Enrollment
+- **Lesson Pattern**: Objectives → Content → Interactive Elements → Assessment
+- **Assessment Pattern**: Instructions → Questions → Submission → Feedback
+- **Learning Path Pattern**: Prerequisites → Core Content → Assessments → Certification
+- **Discussion Pattern**: Topic → Threaded Replies → Instructor Input → Resolution
+- **Progress Pattern**: Visual Tracker → Completion Status → Next Steps → Achievements
+```
+
+### Entertainment/Streaming Website Generator
+```javascript
+function generateEntertainmentWebsiteRules() {
+  return `
+## 🗺️ Entertainment/Streaming Website Architecture Map
+
+\`\`\`
+┌─ User Interface Layer ──────────────┐      ┌─ Content Management Layer ┐
+│                                     │      │                           │
+│  ┌─ Page Components ────────────┐   │      │  ┌─ Admin Dashboard ───┐  │
+│  │ - Home/Browse Pages         │   │      │  │ - Content Upload     │  │
+│  │ - Media Player Pages        │   │      │  │ - Catalog Management │  │
+│  │ - Category/Genre Pages      │   │      │  │ - User Management    │  │
+│  │ - User Profile Pages        │   │      │  │ - Analytics          │  │
+│  └──────────────────────────────┘   │      │  └─────────────────────┘  │
+│                                     │      │                           │
+│  ┌─ Client Components ───────────┐  │      │  ┌─ Data Storage ───────┐  │
+│  │ - Media Player               │◄─┼──────┼─►│ - Media Catalog       │  │
+│  │ - Recommendation Carousels   │  │      │  │ - User Profiles       │  │
+│  │ - Search Interface           │  │      │  │ - Viewing History     │  │
+│  │ - Watchlist Components       │  │      │  │ - Recommendations     │  │
+│  └──────────────────────────────┘  │      │  └─────────────────────┘  │
+│                                     │      │                           │
+└─────────────────────────────────────┘      └───────────────────────────┘
+
+┌─ Entertainment Specific Concerns ────────────────────────────────────────┐
+│                                                                          │
+│  ┌─ Media Delivery ─────┐  ┌─ User Experience ───┐  ┌─ Monetization ───┐ │
+│  │ - Streaming Quality  │  │ - Recommendations   │  │ - Subscriptions  │ │
+│  │ - Adaptive Bitrate   │  │ - Watchlist/History │  │ - Advertising   │ │
+│  │ - DRM Protection     │  │ - Ratings/Reviews   │  │ - Tiered Access │ │
+│  │ - Multi-device       │  │ - Personalization   │  │ - Pay-per-view  │ │
+│  └────────────────────┘  └─────────────────────┘  └──────────────────┘ │
+│                                                                          │
+└──────────────────────────────────────────────────────────────────────────┘
+\`\`\`
+
+## 📋 Entertainment/Streaming Website Implementation Plan
+
+### Phase 1: Streaming Platform Setup
+[ ] 1.1. Initial Setup
+    [ ] Create Next.js project with TypeScript
+    [ ] Configure ESLint and Prettier
+    [ ] Set up project structure for streaming platform
+    [ ] Initialize Git repository
+
+[ ] 1.2. Streaming Platform Dependencies
+    [ ] Install Shadcn UI for streaming components
+    [ ] Set up media player and streaming libraries
+    [ ] Install platform specific dependencies
+        [ ] Add video.js or similar player
+        [ ] Add content protection tools
+        [ ] Add recommendation engine
+
+[ ] 1.3. Content Structure
+    [ ] Design media catalog data model
+    [ ] Create genre/category taxonomy
+    [ ] Set up user profile and preferences
+    [ ] Define content metadata schema
+
+### Phase 2: Core Streaming Features
+[ ] 2.1. Content Browsing
+    [ ] Homepage with featured content
+    [ ] Genre/category browsing
+    [ ] Search functionality
+    [ ] Filtering and sorting
+
+[ ] 2.2. Media Player
+    [ ] Video player implementation
+    [ ] Quality selection
+    [ ] Playback controls
+    [ ] Continue watching functionality
+
+[ ] 2.3. User Features
+    [ ] User registration and profiles
+    [ ] Watchlist management
+    [ ] Viewing history
+    [ ] Ratings and reviews
+
+### Phase 3: User Experience
+[ ] 3.1. Personalization
+    [ ] Recommendation algorithm
+    [ ] Personalized homepage
+    [ ] Content carousels
+    [ ] "Because you watched" suggestions
+
+[ ] 3.2. Multi-device Experience
+    [ ] Responsive design
+    [ ] Playback position syncing
+    [ ] Device management
+    [ ] Download for offline viewing
+
+### Phase 4: Platform Management
+[ ] 4.1. Content Management
+    [ ] Media upload and processing
+    [ ] Metadata management
+    [ ] Content scheduling
+    [ ] Featured content curation
+
+[ ] 4.2. Business Features
+    [ ] Subscription management
+    [ ] Payment processing
+    [ ] Analytics dashboard
+    [ ] Content performance metrics
+
+## 🧠 Entertainment/Streaming Pattern Recognition Map
+
+### Streaming Feature Patterns
+- **Browse Pattern**: Featured → Categories → Personalized Rows → Continue Watching
+- **Player Pattern**: Video → Controls → Quality Options → Related Content
+- **Content Detail Pattern**: Preview → Info → Cast → Similar Titles
+- **User Profile Pattern**: Preferences → History → Watchlist → Recommendations
+- **Search Pattern**: Query → Filters → Results Grid → Quick Preview
+- **Category Pattern**: Banner → Description → Subcategories → Content Grid
+```
+
+### Landing Page Generator
+```javascript
+function generateLandingPageRules() {
+  return `
+## 🗺️ Landing Page Architecture Map
+
+\`\`\`
+┌─ User Interface Layer ──────────────┐      ┌─ Conversion Layer ────────┐
+│                                     │      │                           │
+│  ┌─ Page Sections ─────────────┐    │      │  ┌─ Form Processing ────┐  │
+│  │ - Hero Section             │    │      │  │ - Lead Capture       │  │
+│  │ - Features/Benefits        │    │      │  │ - Form Validation    │  │
+│  │ - Social Proof             │    │      │  │ - Submission Handling│  │
+│  │ - CTA Sections             │    │      │  │ - Thank You/Next Steps│ │
+│  └──────────────────────────────┘    │      │  └─────────────────────┘  │
+│                                     │      │                           │
+│  ┌─ Client Components ───────────┐  │      │  ┌─ Data Storage ───────┐  │
+│  │ - Animated Elements          │◄─┼──────┼─►│ - Lead Information    │  │
+│  │ - Form Components            │  │      │  │ - Analytics Data      │  │
+│  │ - Testimonial Sliders        │  │      │  │ - A/B Test Variations │  │
+│  │ - Mobile Responsiveness      │  │      │  │ - Campaign Metrics    │  │
+│  └──────────────────────────────┘  │      │  └─────────────────────┘  │
+│                                     │      │                           │
+└─────────────────────────────────────┘      └───────────────────────────┘
+
+┌─ Landing Page Specific Concerns ─────────────────────────────────────────┐
+│                                                                          │
+│  ┌─ Conversion Optimization ┐  ┌─ Messaging Strategy ┐  ┌─ Analytics ───┐ │
+│  │ - Value Proposition     │  │ - Copy Hierarchy    │  │ - Conversion   │ │
+│  │ - CTA Design            │  │ - Pain Points       │  │   Tracking     │ │
+│  │ - Form Optimization     │  │ - Benefits          │  │ - Heatmaps     │ │
+│  │ - A/B Testing           │  │ - Social Proof      │  │ - User Journey │ │
+│  └────────────────────────┘  └────────────────────┘  └─────────────────┘ │
+│                                                                          │
+└──────────────────────────────────────────────────────────────────────────┘
+\`\`\`
+
+## 📋 Landing Page Implementation Plan
+
+### Phase 1: Landing Page Setup
+[ ] 1.1. Initial Setup
+    [ ] Create Next.js project with TypeScript
+    [ ] Configure ESLint and Prettier
+    [ ] Set up project structure for landing page
+    [ ] Initialize Git repository
+
+[ ] 1.2. Landing Page Dependencies
+    [ ] Install Shadcn UI for landing page components
+    [ ] Set up animation libraries (Framer Motion)
+    [ ] Install landing page specific dependencies
+        [ ] Add form handling and validation
+        [ ] Add analytics tracking
+        [ ] Add A/B testing tools if needed
+
+[ ] 1.3. Design Implementation
+    [ ] Create responsive layout structure
+    [ ] Implement brand colors and typography
+    [ ] Set up image optimization
+    [ ] Create reusable UI components
+
+### Phase 2: Core Landing Page Sections
+[ ] 2.1. Hero Section
+    [ ] Headline and subheadline
+    [ ] Primary CTA
+    [ ] Visual element (image/video)
+    [ ] Social proof indicators
+
+[ ] 2.2. Value Proposition Sections
+    [ ] Features/benefits presentation
+    [ ] Problem/solution framing
+    [ ] Visual aids and illustrations
+    [ ] Secondary CTAs
+
+[ ] 2.3. Social Proof
+    [ ] Testimonial components
+    [ ] Client logos section
+    [ ] Case study highlights
+    [ ] Trust indicators
+
+### Phase 3: Conversion Elements
+[ ] 3.1. Lead Capture
+    [ ] Form design and implementation
+    [ ] Form validation
+    [ ] Submission handling
+    [ ] Thank you/confirmation state
+
+[ ] 3.2. Supporting Elements
+    [ ] FAQ section
+    [ ] Pricing information (if applicable)
+    [ ] Guarantee statements
+    [ ] Final CTA section
+
+### Phase 4: Optimization
+[ ] 4.1. Performance
+    [ ] Image optimization
+    [ ] Core Web Vitals improvement
+    [ ] Mobile responsiveness testing
+    [ ] Page load optimization
+
+[ ] 4.2. Analytics
+    [ ] Conversion tracking setup
+    [ ] Event tracking implementation
+    [ ] A/B testing framework
+    [ ] User behavior monitoring
+
+## 🧠 Landing Page Pattern Recognition Map
+
+### Landing Page Feature Patterns
+- **Hero Pattern**: Headline → Subheadline → Primary CTA → Visual Element
+- **Feature Pattern**: Problem Statement → Solution → Benefit → Visual
+- **Testimonial Pattern**: Quote → Client Name → Position/Company → Photo
+- **CTA Pattern**: Value Proposition → Action Button → Risk Reducer
+- **Form Pattern**: Minimal Fields → Clear Labels → Submit Button → Next Steps
+- **FAQ Pattern**: Common Objections → Clear Answers → Supporting Evidence → CTA
+```
+
+### Web Application/SaaS Platform Generator
+```javascript
+function generateWebAppRules() {
+  return `
+## 🗺️ Web Application/SaaS Architecture Map
+
+\`\`\`
+┌─ User Interface Layer ──────────────┐      ┌─ Backend Layer ────────────┐
+│                                     │      │                            │
+│  ┌─ Page Components ────────────┐   │      │  ┌─ API Routes ──────────┐  │
+│  │ - Dashboard                  │   │      │  │ - CRUD Operations     │  │
+│  │ - Account/Settings           │   │      │  │ - Authentication      │  │
+│  │ - Feature Pages              │   │      │  │ - Data Processing     │  │
+│  │ - Analytics Views            │   │      │  │ - Integration Points  │  │
+│  └──────────────────────────────┘   │      │  └────────────────────┘  │
+│                                     │      │                            │
+│  ┌─ Client Components ───────────┐  │      │  ┌─ Data Layer ───────────┐  │
+│  │ - Data Visualization         │◄─┼──────┼─►│ - Database Schema      │  │
+│  │ - Interactive Controls       │  │      │  │ - Data Relationships   │  │
+│  │ - Form Systems               │  │      │  │ - Caching Strategy     │  │
+│  │ - Real-time Updates          │  │      │  │ - Data Validation      │  │
+│  └──────────────────────────────┘  │      │  └────────────────────┘  │
+│                                     │      │                            │
+└─────────────────────────────────────┘      └────────────────────────────┘
+
+┌─ SaaS Specific Concerns ───────────────────────────────────────────────┐
+│                                                                        │
+│  ┌─ Business Logic ─────┐  ┌─ User Management ───┐  ┌─ Operations ───┐ │
+│  │ - Subscription Tiers │  │ - Authentication    │  │ - Monitoring   │ │
+│  │ - Feature Access     │  │ - Role Management   │  │ - Logging      │ │
+│  │ - Usage Tracking     │  │ - Team Collaboration│  │ - Security     │ │
+│  │ - Billing System     │  │ - User Settings     │  │ - Scalability  │ │
+│  └────────────────────┘  └────────────────────┘  └────────────────┘ │
+│                                                                        │
+└────────────────────────────────────────────────────────────────────────┘
+\`\`\`
+
+## 📋 Web Application/SaaS Implementation Plan
+
+### Phase 1: Application Setup
+[ ] 1.1. Initial Setup
+    [ ] Create Next.js project with TypeScript
+    [ ] Configure ESLint and Prettier
+    [ ] Set up project structure for SaaS
+    [ ] Initialize Git repository
+
+[ ] 1.2. SaaS Dependencies
+    [ ] Install Shadcn UI for application components
+    [ ] Set up authentication system
+    [ ] Install application specific dependencies
+        [ ] Add state management library
+        [ ] Add data fetching utilities
+        [ ] Add real-time functionality
+
+[ ] 1.3. Data Architecture
+    [ ] Design database schema
+    [ ] Create API structure
+    [ ] Set up authentication flow
+    [ ] Define data validation rules
+
+### Phase 2: Core Application Features
+[ ] 2.1. Authentication System
+    [ ] User registration and login
+    [ ] Password reset flow
+    [ ] Social authentication
+    [ ] Session management
+
+[ ] 2.2. User Dashboard
+    [ ] Main dashboard layout
+    [ ] Key metrics display
+    [ ] Activity feed
+    [ ] Quick actions
+
+[ ] 2.3. Account Management
+    [ ] User profile settings
+    [ ] Team management
+    [ ] Subscription management
+    [ ] Billing integration
+
+### Phase 3: Business Features
+[ ] 3.1. Subscription System
+    [ ] Plan configuration
+    [ ] Payment processing
+    [ ] Usage tracking
+    [ ] Feature access control
+
+[ ] 3.2. Team Collaboration
+    [ ] Role-based access control
+    [ ] Team workspace
+    [ ] Sharing capabilities
+    [ ] Activity logging
+
+### Phase 4: Advanced Features
+[ ] 4.1. Integration Framework
+    [ ] API documentation
+    [ ] Webhook system
+    [ ] Third-party integrations
+    [ ] Export capabilities
+
+[ ] 4.2. Analytics and Reporting
+    [ ] Usage analytics
+    [ ] Custom reports
+    [ ] Data visualization
+    [ ] Export functionality
+
+## 🧠 Web Application/SaaS Pattern Recognition Map
+
+### SaaS Feature Patterns
+- **Dashboard Pattern**: Key Metrics → Recent Activity → Quick Actions → Notifications
+- **Settings Pattern**: User Profile → Preferences → Security → Integrations
+- **Team Pattern**: Members → Roles → Permissions → Activity
+- **Subscription Pattern**: Plans → Features → Usage → Billing
+- **Integration Pattern**: API Keys → Webhooks → OAuth → Documentation
+- **Analytics Pattern**: Metrics → Graphs → Filters → Export
+
+### SaaS Implementation Standards
+
+#### Security Requirements
+- Authentication with MFA support
+- Role-based access control (RBAC)
+- API rate limiting
+- Data encryption at rest and in transit
+- Regular security audits
+- GDPR/CCPA compliance features
+
+#### Performance Standards
+- Page load time < 2s
+- API response time < 200ms
+- Real-time updates < 100ms
+- 99.9% uptime SLA
+- Horizontal scaling capability
+- CDN integration
+
+#### Monitoring Requirements
+- Error tracking and logging
+- User activity monitoring
+- Performance metrics
+- Usage analytics
+- Health checks
+- Automated alerts
+
+#### Data Management
+- Regular backups
+- Data retention policies
+- Audit trails
+- Data export capabilities
+- Version control
+- Change history
+
+This completes the Web Application/SaaS Platform Generator template with comprehensive guidelines for building robust, scalable SaaS applications.
+`;
+}

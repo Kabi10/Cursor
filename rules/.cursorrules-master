@@ -1,0 +1,136 @@
+# Cursor Master Rules for Project Development
+
+## 🔄 Project Type Selection
+Choose your project type from the list below to generate specific guidelines:
+
+- [ ] E-commerce Website
+- [ ] Business Website
+- [ ] Portfolio Website
+- [ ] Blog Website
+- [ ] News & Media Website
+- [ ] Social Media/Community Website
+- [ ] Educational Website
+- [ ] Entertainment/Streaming Website
+- [ ] Landing Page
+- [ ] Web Application/SaaS Platform
+
+## ⚠️ MANDATORY PRE-IMPLEMENTATION CHECKLIST ⚠️
+STOP! Before writing ANY code or suggesting ANY changes:
+
+1. 🔍 SEARCH FIRST (REQUIRED):
+   ```bash
+   # Document ALL search results below
+   grep_search "[feature keyword]" # Search for related functionality
+   file_search "[filename pattern]" # Search for similar files
+   list_dir "[relevant directory]" # List contents of relevant directories
+   ```
+
+2. 📝 DOCUMENT FINDINGS (REQUIRED):
+   ```markdown
+   ## Existing Files Found:
+   - [List all relevant files found with full paths]
+   - [Include file sizes and last modified dates if relevant]
+   
+   ## Existing Functionality:
+   - [Describe what already exists in detail]
+   - [Note any patterns or architectural approaches used]
+   
+   ## Gaps Identified:
+   - [List what's missing or needs enhancement]
+   - [Identify technical debt or issues in existing code]
+   
+   ## Implementation Decision Tree:
+   - Is there existing code that serves this purpose? [Yes/No]
+   - Can existing code be enhanced to meet requirements? [Yes/No]
+   - Is creating new code justified? [Yes/No, with reasoning]
+   
+   ## Proposed Approach:
+   - [ ] Enhance existing code at [file path]
+   - [ ] Create new files (requires detailed justification)
+   - [ ] Refactor existing code at [file path]
+   
+   ## Implementation Plan:
+   1. [First step with estimated effort]
+   2. [Second step with estimated effort]
+   3. [Additional steps as needed]
+   ```
+
+3. ✋ WAIT FOR APPROVAL:
+   - Present findings to user with clear options
+   - Get explicit approval for chosen approach
+   - Never proceed with new files if similar functionality exists
+   - Document approval in the implementation plan
+
+## 📚 AI Instructions
+
+As an AI code builder, this document serves as your complete guide for building or extending any project. The rules below define HOW you should approach implementation regardless of project type:
+
+1. **Decision Protocol**: Before implementing any feature:
+   - First search for existing code and patterns
+   - Show clear options with tradeoffs
+   - Wait for explicit approval
+   - Document your decision-making process
+
+2. **Context Management**:
+   - Maintain a mental map of the project architecture
+   - Reference existing patterns when suggesting solutions
+   - Track technical debt and refactoring opportunities
+   - Keep your internal representation of the codebase updated
+
+3. **Implementation Approach**:
+   - Follow the pattern recognition guidelines
+   - Use established project patterns over introducing new ones
+   - Provide "why" explanations along with code
+   - Tag all implementation decisions with appropriate decision factors
+
+4. **Uncertainty Protocol**:
+   - When encountering ambiguity, present options with pros/cons
+   - Explicitly flag incomplete knowledge ("This appears to be ___, but I need more context")
+   - Use specified formats for indicating uncertainty levels
+   - Provide specific questions to resolve key uncertainties
+
+## 📊 Project Progress Dashboard
+Overall Progress: 0% Complete
+- Setup & Configuration    □□□□□□□□□□   0%
+- Core Features           □□□□□□□□□□   0%
+- Admin Dashboard         □□□□□□□□□□   0%
+- User Features           □□□□□□□□□□   0%
+- Advanced Features       □□□□□□□□□□   0%
+- Testing & Deployment    □□□□□□□□□□   0%
+- Post-Launch             □□□□□□□□□□   0%
+
+## 🛡️ Critical Standards
+
+### Technical Quality Standards
+| Category | Standards |
+|----------|-----------|
+| Type Safety | • No `any` types<br>• Explicit return types on functions<br>• Proper interface definitions |
+| Error Handling | • Try/catch blocks around async operations<br>• Graceful fallbacks<br>• Error logging |
+| Performance | • Proper component splitting<br>• Data fetching optimizations<br>• Bundle size monitoring |
+| Security | • Input validation<br>• Authentication checks<br>• CSRF protection |
+
+### Testing Coverage Requirements
+| Component Type | Minimum Coverage | Required Test Types |
+|----------------|------------------|---------------------|
+| UI Components | 80% | • Unit tests<br>• Snapshot tests |
+| Pages | 70% | • Loading states<br>• Error states<br>• Integration tests |
+| API Routes | 90% | • Input validation<br>• Auth checks<br>• Error handling |
+| Utility Functions | 95% | • Unit tests<br>• Edge cases |
+| State Management | 85% | • State transitions<br>• Side effects |
+
+## 📋 Scratchpad
+
+### Current Task:
+- [ ] Task description
+- [ ] Subtask 1
+- [ ] Subtask 2
+
+### Notes:
+- Important consideration 1
+- Important consideration 2
+
+### Next Steps:
+1. Step 1
+2. Step 2
+3. Step 3
+

@@ -1,0 +1,201 @@
+# Cursor Web SaaS Rules
+
+## 🗺️ Web SaaS Project Architecture Map
+
+```
+┌─ User Interface Layer ───────────────┐      ┌─ Service Layer ─────┐
+│                                      │      │                     │
+│  ┌─ Page Components ─────────────┐   │      │  ┌─ API Routes ──┐  │
+│  │ - Dashboard                   │   │      │  │ - REST API    │  │
+│  │ - Settings                    │   │      │  │ - GraphQL     │  │
+│  │ - Account Management          │   │      │  │ - WebSockets  │  │
+│  └───────────────────────────────┘   │      │  └──────────────┘  │
+│                                      │      │                     │
+│  ┌─ Client Components ────────────┐  │      │  ┌─ Database ────┐  │
+│  │ - Data Visualization           │◄─┼──────┼─►│ - Users       │  │
+│  │ - Real-time Updates           │  │      │  │ - Workspaces  │  │
+│  │ - Interactive Forms           │  │      │  │ - Settings    │  │
+│  └───────────────────────────────┘  │      │  └──────────────┘  │
+│                                      │      │                     │
+└──────────────────────────────────────┘      └─────────────────────┘
+
+┌─ SaaS Specific Concerns ────────────────────────────────────────┐
+│                                                                  │
+│  ┌─ Subscription ────┐  ┌─ Multi-tenant ─────┐  ┌─ Analytics ─┐ │
+│  │ - Billing         │  │ - Workspace Mgmt   │  │ - Usage     │ │
+│  │ - Plans           │  │ - Data Isolation   │  │ - Metrics   │ │
+│  │ - Usage Tracking  │  │ - Access Control   │  │ - Reports   │ │
+│  └─────────────────┘  └──────────────────┘  └─────────────────┘ │
+│                                                                  │
+└──────────────────────────────────────────────────────────────────┘
+```
+
+## ⚠️ MANDATORY PRE-IMPLEMENTATION CHECKLIST ⚠️
+STOP! Before writing ANY code or suggesting ANY changes:
+
+1. 🔍 SEARCH FIRST:
+   ```bash
+   # REQUIRED: Run these searches and document results
+   grep_search for functionality
+   file_search for similar files
+   list_dir in relevant directories
+   ```
+
+2. 📝 DOCUMENT FINDINGS:
+   ```markdown
+   # REQUIRED: Fill this out
+   ## Existing Files Found:
+   - [List all relevant files found with full paths]
+   - [Include file sizes and last modified dates if relevant]
+   
+   ## Existing Functionality:
+   - [Describe what already exists in detail]
+   - [Note any patterns or architectural approaches used]
+   
+   ## Gaps Identified:
+   - [List what's missing or needs enhancement]
+   - [Identify technical debt or issues in existing code]
+   
+   ## Implementation Decision Tree:
+   - Is there existing code that serves this purpose? [Yes/No]
+   - Can existing code be enhanced to meet requirements? [Yes/No]
+   - Is creating new code justified? [Yes/No, with reasoning]
+   
+   ## Proposed Approach:
+   - [ ] Enhance existing code at [file path]
+   - [ ] Create new files (requires detailed justification)
+   - [ ] Refactor existing code at [file path]
+   
+   ## Implementation Plan:
+   1. [First step with estimated effort]
+   2. [Second step with estimated effort]
+   3. [Additional steps as needed]
+   ```
+
+3. ✋ WAIT FOR APPROVAL:
+   - Present findings to user with clear options
+   - Get explicit approval for chosen approach
+   - Never proceed with new files if similar functionality exists
+   - Document approval in the implementation plan
+
+❌ IF YOU SKIP THIS CHECKLIST, YOU ARE VIOLATING THE MOST IMPORTANT RULE ❌ 
+
+## 📋 Web SaaS Implementation Plan
+
+### Phase 1: SaaS Foundation Setup
+[ ] 1.1. Initial Setup
+    [ ] Create Next.js project with TypeScript
+    [ ] Configure ESLint and Prettier
+    [ ] Set up project structure
+    [ ] Initialize Git repository
+
+[ ] 1.2. Core Dependencies Installation
+    [ ] Install Shadcn UI components
+    [ ] Set up authentication (NextAuth.js)
+    [ ] Install SaaS specific dependencies
+        [ ] Add Stripe for billing
+        [ ] Add analytics tools
+        [ ] Add real-time features
+
+[ ] 1.3. Database and API Setup
+    [ ] Configure database with Prisma
+    [ ] Set up multi-tenant architecture
+    [ ] Create core data models
+    [ ] Implement API structure
+
+### Phase 2: Core SaaS Features
+[ ] 2.1. Authentication & Authorization
+    [ ] User authentication flow
+    [ ] Role-based access control
+    [ ] Team/workspace management
+    [ ] SSO integration
+
+[ ] 2.2. Subscription Management
+    [ ] Subscription plans setup
+    [ ] Billing integration
+    [ ] Usage tracking
+    [ ] Payment processing
+
+[ ] 2.3. User Dashboard
+    [ ] Main dashboard layout
+    [ ] Data visualization
+    [ ] Activity feeds
+    [ ] User preferences
+
+### Phase 3: Advanced Features
+[ ] 3.1. Team Collaboration
+    [ ] Team management
+    [ ] Shared workspaces
+    [ ] Activity tracking
+    [ ] Notifications system
+
+[ ] 3.2. Analytics & Reporting
+    [ ] Usage analytics
+    [ ] Custom reports
+    [ ] Export functionality
+    [ ] Data visualization
+
+### Phase 4: Platform Enhancement
+[ ] 4.1. Performance & Scale
+    [ ] Caching implementation
+    [ ] Performance monitoring
+    [ ] Load balancing setup
+    [ ] Database optimization
+
+[ ] 4.2. Integration Features
+    [ ] API documentation
+    [ ] Webhook system
+    [ ] Third-party integrations
+    [ ] Extension system
+
+## 🧠 SaaS Pattern Recognition Map
+
+### SaaS Feature Patterns
+- **Authentication Pattern**: Sign up → Email verification → Profile completion
+- **Subscription Pattern**: Plan selection → Payment → Access provision
+- **Dashboard Pattern**: Overview → Detailed views → Actions
+- **Team Pattern**: Invite → Role assignment → Workspace sharing
+- **Analytics Pattern**: Data collection → Processing → Visualization
+- **Settings Pattern**: Categories → Form groups → Validation → Save
+
+## 📊 Project Progress Dashboard
+Overall Progress: 0% Complete
+- Foundation Setup        □□□□□□□□□□   0%
+- Core Features          □□□□□□□□□□   0%
+- Advanced Features      □□□□□□□□□□   0%
+- Platform Enhancement   □□□□□□□□□□   0%
+- Testing & Deployment   □□□□□□□□□□   0%
+- Documentation         □□□□□□□□□□   0%
+
+## 🛡️ SaaS Critical Standards
+
+### Security Standards
+| Category | Requirements |
+|----------|--------------|
+| Multi-tenancy | • Data isolation<br>• Access control<br>• Resource limits |
+| Authentication | • MFA support<br>• Session management<br>• Password policies |
+| Data Protection | • Encryption at rest<br>• Encryption in transit<br>• Backup systems |
+
+### Performance Standards
+| Category | Requirements |
+|----------|--------------|
+| API Response | • < 200ms average<br>• 99.9% uptime<br>• Rate limiting |
+| Real-time Updates | • < 100ms latency<br>• Fallback mechanisms<br>• Connection recovery |
+| Database | • Query optimization<br>• Connection pooling<br>• Indexing strategy |
+
+## 📋 Scratchpad
+
+### Current Task:
+- [ ] Task description
+- [ ] Subtask 1
+- [ ] Subtask 2
+
+### Notes:
+- Important consideration 1
+- Important consideration 2
+
+### Next Steps:
+1. Step 1
+2. Step 2
+3. Step 3
+

@@ -1,0 +1,203 @@
+# Cursor E-commerce Rules
+
+## 🗺️ E-commerce Project Architecture Map
+
+```
+┌─ User Interface Layer ───────────────┐      ┌─ Data Access Layer ─┐
+│                                      │      │                     │
+│  ┌─ Page Components ─────────────┐   │      │  ┌─ API Routes ──┐  │
+│  │ - Product Pages              │   │      │  │ - REST API    │  │
+│  │ - Category Pages             │   │      │  │ - Server      │  │
+│  │ - Checkout Flow              │   │      │  │   Actions     │  │
+│  └───────────────────────────────┘   │      │  └──────────────┘  │
+│                                      │      │                     │
+│  ┌─ Client Components ────────────┐  │      │  ┌─ Database ────┐  │
+│  │ - Product Filters              │◄─┼──────┼─►│ - Products    │  │
+│  │ - Cart Components              │  │      │  │ - Orders      │  │
+│  │ - Payment Forms                │  │      │  │ - Users       │  │
+│  └───────────────────────────────┘  │      │  └──────────────┘  │
+│                                      │      │                     │
+└──────────────────────────────────────┘      └─────────────────────┘
+
+┌─ E-commerce Specific Concerns ───────────────────────────────────┐
+│                                                                   │
+│  ┌─ Cart System ─────┐  ┌─ Payment ─────────┐  ┌─ Catalog ─────┐ │
+│  │ - Zustand Store   │  │ - Stripe/PayPal   │  │ - Categories  │ │
+│  │ - Persistence     │  │ - Checkout Flow   │  │ - Filters     │ │
+│  │ - Cart Operations │  │ - Order Creation  │  │ - Search      │ │
+│  └─────────────────┘  └──────────────────┘  └─────────────────┘ │
+│                                                                   │
+└───────────────────────────────────────────────────────────────────┘
+```
+
+## ⚠️ MANDATORY PRE-IMPLEMENTATION CHECKLIST ⚠️
+STOP! Before writing ANY code or suggesting ANY changes:
+
+1. 🔍 SEARCH FIRST:
+   ```bash
+   # REQUIRED: Run these searches and document results
+   grep_search for functionality
+   file_search for similar files
+   list_dir in relevant directories
+   ```
+
+2. 📝 DOCUMENT FINDINGS:
+   ```markdown
+   # REQUIRED: Fill this out
+   ## Existing Files Found:
+   - [List all relevant files found with full paths]
+   - [Include file sizes and last modified dates if relevant]
+   
+   ## Existing Functionality:
+   - [Describe what already exists in detail]
+   - [Note any patterns or architectural approaches used]
+   
+   ## Gaps Identified:
+   - [List what's missing or needs enhancement]
+   - [Identify technical debt or issues in existing code]
+   
+   ## Implementation Decision Tree:
+   - Is there existing code that serves this purpose? [Yes/No]
+   - Can existing code be enhanced to meet requirements? [Yes/No]
+   - Is creating new code justified? [Yes/No, with reasoning]
+   
+   ## Proposed Approach:
+   - [ ] Enhance existing code at [file path]
+   - [ ] Create new files (requires detailed justification)
+   - [ ] Refactor existing code at [file path]
+   
+   ## Implementation Plan:
+   1. [First step with estimated effort]
+   2. [Second step with estimated effort]
+   3. [Additional steps as needed]
+   ```
+
+3. ✋ WAIT FOR APPROVAL:
+   - Present findings to user with clear options
+   - Get explicit approval for chosen approach
+   - Never proceed with new files if similar functionality exists
+   - Document approval in the implementation plan
+
+❌ IF YOU SKIP THIS CHECKLIST, YOU ARE VIOLATING THE MOST IMPORTANT RULE ❌ 
+
+## 📋 E-commerce Implementation Plan
+
+### Phase 1: E-commerce Setup and Configuration
+[ ] 1.1. Initial Setup
+    [ ] Create Next.js project with TypeScript
+    [ ] Configure ESLint and Prettier
+    [ ] Set up project structure with e-commerce folders
+    [ ] Initialize Git repository
+
+[ ] 1.2. E-commerce Dependencies Installation
+    [ ] Install Shadcn UI for e-commerce components
+    [ ] Set up Lucide icons
+    [ ] Install e-commerce specific dependencies
+        [ ] Add Zod for product/order validation
+        [ ] Add Zustand for cart state management
+        [ ] Add Stripe/PayPal for payments
+        [ ] Add Resend for order emails
+
+[ ] 1.3. E-commerce Data Model Setup
+    [ ] Configure database
+    [ ] Create Prisma schema for products, categories, orders
+    [ ] Set up authentication for customers
+    [ ] Create seed data for products and categories
+
+### Phase 2: Core E-commerce Features
+[ ] 2.1. Product Catalog
+    [ ] Product listing pages with filters and search
+    [ ] Product detail pages with image gallery
+    [ ] Category navigation
+    [ ] Reviews and ratings system
+
+[ ] 2.2. Shopping Cart
+    [ ] Create cart store with Zustand
+    [ ] Implement cart operations (add/remove/update)
+    [ ] Cart persistence across sessions
+    [ ] Cart summary and totals calculation
+
+[ ] 2.3. Checkout Process
+    [ ] Multi-step checkout flow
+    [ ] Address and shipping options
+    [ ] Payment integration
+    [ ] Order confirmation
+
+### Phase 3: E-commerce Admin Features
+[ ] 3.1. Product Management
+    [ ] Product CRUD operations
+    [ ] Inventory management
+    [ ] Product image uploads
+    [ ] Product variants and options
+
+[ ] 3.2. Order Management
+    [ ] Order listing and details
+    [ ] Order status updates
+    [ ] Order fulfillment process
+    [ ] Returns handling
+
+### Phase 4: E-commerce Advanced Features
+[ ] 4.1. Customer Features
+    [ ] Customer accounts
+    [ ] Order history
+    [ ] Wishlist functionality
+    [ ] Saved payment methods
+
+[ ] 4.2. Marketing Features
+    [ ] Promotions and discounts
+    [ ] Product recommendations
+    [ ] Email marketing integration
+    [ ] Social sharing
+
+## 🧠 E-commerce Pattern Recognition Map
+
+### E-commerce Feature Patterns
+- **Product Display Pattern**: Grid/List views → Filters → Pagination
+- **Cart Pattern**: Add to cart → Cart UI → Checkout flow
+- **Checkout Pattern**: Information → Shipping → Payment → Confirmation
+- **Order Pattern**: Create order → Process payment → Update inventory → Send confirmation
+- **Admin Pattern**: CRUD interfaces for products/orders/customers with validation
+- **Search Pattern**: Query input → Filter application → Sorted results
+
+## 📊 Project Progress Dashboard
+Overall Progress: 0% Complete
+- Setup & Configuration    □□□□□□□□□□   0%
+- Product Catalog         □□□□□□□□□□   0%
+- Shopping Cart           □□□□□□□□□□   0%
+- Checkout System         □□□□□□□□□□   0%
+- Admin Features          □□□□□□□□□□   0%
+- Customer Features       □□□□□□□□□□   0%
+- Marketing Features      □□□□□□□□□□   0%
+
+## 🛡️ E-commerce Critical Standards
+
+### Security Standards
+| Category | Requirements |
+|----------|--------------|
+| Payment Processing | • PCI Compliance<br>• Secure payment gateway integration<br>• Payment data encryption |
+| User Data | • GDPR Compliance<br>• Secure customer data storage<br>• Privacy policy implementation |
+| Authentication | • Secure login system<br>• Password hashing<br>• Session management |
+
+### Performance Standards
+| Category | Requirements |
+|----------|--------------|
+| Page Load | • < 2s initial load<br>• < 500ms subsequent loads |
+| Image Optimization | • Lazy loading<br>• Multiple resolutions<br>• WebP format |
+| Cart Operations | • < 100ms response time<br>• Offline support<br>• Auto-save |
+
+## 📋 Scratchpad
+
+### Current Task:
+- [ ] Task description
+- [ ] Subtask 1
+- [ ] Subtask 2
+
+### Notes:
+- Important consideration 1
+- Important consideration 2
+
+### Next Steps:
+1. Step 1
+2. Step 2
+3. Step 3
+

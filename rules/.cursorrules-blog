@@ -1,0 +1,186 @@
+# Cursor Blog Rules
+
+## 🗺️ Blog Project Architecture Map
+
+```
+┌─ Content Layer ────────────────────┐      ┌─ Data Layer ────────┐
+│                                    │      │                     │
+│  ┌─ Page Components ───────────┐   │      │  ┌─ API Routes ──┐  │
+│  │ - Blog Posts               │   │      │  │ - REST API    │  │
+│  │ - Categories              │   │      │  │ - Server      │  │
+│  │ - Author Pages            │   │      │  │   Actions     │  │
+│  └─────────────────────────────┘   │      │  └──────────────┘  │
+│                                    │      │                     │
+│  ┌─ Client Components ──────────┐  │      │  ┌─ Database ────┐  │
+│  │ - Comment System            │◄─┼──────┼─►│ - Posts       │  │
+│  │ - Search Interface         │  │      │  │ - Categories  │  │
+│  │ - Newsletter Signup        │  │      │  │ - Comments    │  │
+│  └─────────────────────────────┘  │      │  └──────────────┘  │
+│                                    │      │                     │
+└────────────────────────────────────┘      └─────────────────────┘
+
+┌─ Blog Specific Concerns ───────────────────────────────────────┐
+│                                                                 │
+│  ┌─ Content Mgmt ────┐  ┌─ SEO ────────────┐  ┌─ Social ────┐ │
+│  │ - Editor          │  │ - Meta Tags      │  │ - Sharing   │ │
+│  │ - Media Library   │  │ - Sitemaps       │  │ - Comments  │ │
+│  │ - Categories      │  │ - Structured Data│  │ - Analytics │ │
+│  └─────────────────┘  └──────────────────┘  └─────────────┘ │
+│                                                               │
+└───────────────────────────────────────────────────────────────┘
+```
+
+## ⚠️ MANDATORY PRE-IMPLEMENTATION CHECKLIST ⚠️
+STOP! Before writing ANY code or suggesting ANY changes:
+
+1. 🔍 SEARCH FIRST:
+   ```bash
+   # REQUIRED: Run these searches and document results
+   grep_search for functionality
+   file_search for similar files
+   list_dir in relevant directories
+   ```
+
+2. 📝 DOCUMENT FINDINGS:
+   ```markdown
+   # REQUIRED: Fill this out
+   ## Existing Files Found:
+   - [List all relevant files found with full paths]
+   - [Include file sizes and last modified dates if relevant]
+   
+   ## Existing Functionality:
+   - [Describe what already exists in detail]
+   - [Note any patterns or architectural approaches used]
+   
+   ## Gaps Identified:
+   - [List what's missing or needs enhancement]
+   - [Identify technical debt or issues in existing code]
+   
+   ## Implementation Decision Tree:
+   - Is there existing code that serves this purpose? [Yes/No]
+   - Can existing code be enhanced to meet requirements? [Yes/No]
+   - Is creating new code justified? [Yes/No, with reasoning]
+   
+   ## Proposed Approach:
+   - [ ] Enhance existing code at [file path]
+   - [ ] Create new files (requires detailed justification)
+   - [ ] Refactor existing code at [file path]
+   
+   ## Implementation Plan:
+   1. [First step with estimated effort]
+   2. [Second step with estimated effort]
+   3. [Additional steps as needed]
+   ```
+
+3. ✋ WAIT FOR APPROVAL:
+   - Present findings to user with clear options
+   - Get explicit approval for chosen approach
+   - Never proceed with new files if similar functionality exists
+   - Document approval in the implementation plan
+
+❌ IF YOU SKIP THIS CHECKLIST, YOU ARE VIOLATING THE MOST IMPORTANT RULE ❌ 
+
+## 📋 Blog Implementation Plan
+
+### Phase 1: Blog Setup and Configuration
+[ ] 1.1. Initial Setup
+    [ ] Create Next.js project with TypeScript
+    [ ] Configure ESLint and Prettier
+    [ ] Set up project structure
+    [ ] Initialize Git repository
+
+[ ] 1.2. Content Management Setup
+    [ ] Install MDX for content
+    [ ] Set up content directory structure
+    [ ] Configure image optimization
+    [ ] Set up content validation
+
+[ ] 1.3. Database and API Setup
+    [ ] Configure database with Prisma
+    [ ] Create content models
+    [ ] Set up API routes
+    [ ] Implement authentication
+
+### Phase 2: Core Blog Features
+[ ] 2.1. Content Display
+    [ ] Blog post listing
+    [ ] Single post view
+    [ ] Category pages
+    [ ] Author pages
+
+[ ] 2.2. Interactive Features
+    [ ] Comment system
+    [ ] Search functionality
+    [ ] Newsletter signup
+    [ ] Social sharing
+
+[ ] 2.3. Content Management
+    [ ] Post editor
+    [ ] Media library
+    [ ] Category management
+    [ ] Author management
+
+### Phase 3: Advanced Features
+[ ] 3.1. SEO Optimization
+    [ ] Meta tags
+    [ ] Sitemap generation
+    [ ] Structured data
+    [ ] RSS feeds
+
+[ ] 3.2. Analytics & Performance
+    [ ] Analytics integration
+    [ ] Performance monitoring
+    [ ] Cache implementation
+    [ ] Image optimization
+
+## 🧠 Blog Pattern Recognition Map
+
+### Blog Feature Patterns
+- **Content Pattern**: List view → Single post → Related posts
+- **Category Pattern**: Category list → Filtered posts → Pagination
+- **Search Pattern**: Search input → Results list → Refinements
+- **Comment Pattern**: Form → Moderation → Notification
+- **Newsletter Pattern**: Signup form → Confirmation → Welcome email
+- **SEO Pattern**: Meta tags → Structured data → Sitemap
+
+## 📊 Project Progress Dashboard
+Overall Progress: 0% Complete
+- Setup & Configuration    □□□□□□□□□□   0%
+- Content Features        □□□□□□□□□□   0%
+- Interactive Features    □□□□□□□□□□   0%
+- SEO & Performance      □□□□□□□□□□   0%
+- Analytics & Tracking   □□□□□□□□□□   0%
+- Documentation         □□□□□□□□□□   0%
+
+## 🛡️ Blog Critical Standards
+
+### Content Standards
+| Category | Requirements |
+|----------|--------------|
+| Post Structure | • Clear hierarchy<br>• Proper formatting<br>• Image optimization |
+| SEO | • Meta descriptions<br>• Title optimization<br>• URL structure |
+| Accessibility | • ARIA labels<br>• Keyboard navigation<br>• Screen reader support |
+
+### Performance Standards
+| Category | Requirements |
+|----------|--------------|
+| Page Load | • < 2s initial load<br>• < 500ms subsequent loads |
+| Images | • WebP format<br>• Lazy loading<br>• Responsive sizes |
+| Caching | • Static generation<br>• Content caching<br>• API response caching |
+
+## 📋 Scratchpad
+
+### Current Task:
+- [ ] Task description
+- [ ] Subtask 1
+- [ ] Subtask 2
+
+### Notes:
+- Important consideration 1
+- Important consideration 2
+
+### Next Steps:
+1. Step 1
+2. Step 2
+3. Step 3
+

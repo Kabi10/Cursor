@@ -1,0 +1,201 @@
+# Cursor Web General Rules
+
+## 🗺️ Web General Architecture Map
+
+```
+┌─ Frontend Layer ────────────────────┐      ┌─ Backend Layer ─────────┐
+│                                     │      │                         │
+│  ┌─ Page Components ────────────┐   │      │  ┌─ API Layer ───────┐  │
+│  │ - Pages                     │   │      │  │ - REST Endpoints   │  │
+│  │ - Layouts                   │   │      │  │ - GraphQL Schema   │  │
+│  │ - Shared Components        │   │      │  │ - Authentication   │  │
+│  └─────────────────────────────┘   │      │  └─────────────────┘  │
+│                                     │      │                         │
+│  ┌─ Client Components ──────────┐  │      │  ┌─ Data Layer ──────┐  │
+│  │ - UI Components             │◄─┼──────┼─►│ - Database Schema  │  │
+│  │ - Forms                     │  │      │  │ - Data Models      │  │
+│  │ - Interactive Elements      │  │      │  │ - Caching          │  │
+│  └─────────────────────────────┘  │      │  └─────────────────┘  │
+│                                     │      │                         │
+└─────────────────────────────────────┘      └─────────────────────────┘
+
+┌─ Web General Concerns ──────────────────────────────────────────┐
+│                                                                  │
+│  ┌─ Performance ─────┐  ┌─ Security ────────┐  ┌─ Quality ────┐ │
+│  │ - Optimization    │  │ - Authentication  │  │ - Testing     │ │
+│  │ - Caching        │  │ - Authorization   │  │ - Monitoring  │ │
+│  │ - Load Times     │  │ - Data Protection │  │ - Analytics   │ │
+│  └─────────────────┘  └──────────────────┘  └──────────────┘ │
+│                                                                  │
+└──────────────────────────────────────────────────────────────────┘
+```
+
+## ⚠️ MANDATORY PRE-IMPLEMENTATION CHECKLIST ⚠️
+STOP! Before writing ANY code or suggesting ANY changes:
+
+1. 🔍 SEARCH FIRST:
+   ```bash
+   # REQUIRED: Run these searches and document results
+   grep_search for functionality
+   file_search for similar files
+   list_dir in relevant directories
+   ```
+
+2. 📝 DOCUMENT FINDINGS:
+   ```markdown
+   ## Existing Files Found:
+   - [List all relevant files found with full paths]
+   - [Include file sizes and last modified dates if relevant]
+   
+   ## Existing Functionality:
+   - [Describe what already exists in detail]
+   - [Note any patterns or architectural approaches used]
+   
+   ## Gaps Identified:
+   - [List what's missing or needs enhancement]
+   - [Identify technical debt or issues in existing code]
+   
+   ## Implementation Decision Tree:
+   - Is there existing code that serves this purpose? [Yes/No]
+   - Can existing code be enhanced to meet requirements? [Yes/No]
+   - Is creating new code justified? [Yes/No, with reasoning]
+   
+   ## Proposed Approach:
+   - [ ] Enhance existing code at [file path]
+   - [ ] Create new files (requires detailed justification)
+   - [ ] Refactor existing code at [file path]
+   
+   ## Implementation Plan:
+   1. [First step with estimated effort]
+   2. [Second step with estimated effort]
+   3. [Additional steps as needed]
+   ```
+
+3. ✋ WAIT FOR APPROVAL:
+   - Present findings to user with clear options
+   - Get explicit approval for chosen approach
+   - Never proceed with new files if similar functionality exists
+   - Document approval in the implementation plan
+
+## 📋 Web General Implementation Plan
+
+### Phase 1: Project Setup
+[ ] 1.1. Initial Setup
+    [ ] Create Next.js project with TypeScript
+    [ ] Configure ESLint and Prettier
+    [ ] Set up project structure
+    [ ] Initialize Git repository
+
+[ ] 1.2. Core Dependencies
+    [ ] Install Shadcn UI components
+    [ ] Set up authentication system
+    [ ] Install project dependencies
+        [ ] Add data fetching utilities
+        [ ] Add form handling libraries
+        [ ] Add testing frameworks
+
+[ ] 1.3. Infrastructure Setup
+    [ ] Configure database connection
+    [ ] Set up API routes
+    [ ] Configure deployment pipeline
+    [ ] Set up monitoring tools
+
+### Phase 2: Core Features
+[ ] 2.1. Authentication System
+    [ ] User registration and login
+    [ ] Password reset flow
+    [ ] Session management
+    [ ] Role-based access control
+
+[ ] 2.2. Data Management
+    [ ] Database schema design
+    [ ] API endpoint implementation
+    [ ] Data validation
+    [ ] Error handling
+
+[ ] 2.3. UI Components
+    [ ] Layout components
+    [ ] Form components
+    [ ] Navigation system
+    [ ] Error boundaries
+
+### Phase 3: Advanced Features
+[ ] 3.1. Performance Optimization
+    [ ] Code splitting
+    [ ] Image optimization
+    [ ] Caching strategy
+    [ ] Bundle optimization
+
+[ ] 3.2. Security Implementation
+    [ ] Security headers
+    [ ] CSRF protection
+    [ ] Input sanitization
+    [ ] Rate limiting
+
+### Phase 4: Quality Assurance
+[ ] 4.1. Testing
+    [ ] Unit tests
+    [ ] Integration tests
+    [ ] E2E tests
+    [ ] Performance tests
+
+[ ] 4.2. Monitoring
+    [ ] Error tracking
+    [ ] Performance monitoring
+    [ ] Analytics setup
+    [ ] Logging system
+
+## 🧠 Web General Pattern Recognition Map
+
+### Feature Patterns
+- **Auth Pattern**: Login → Session → Protected Routes → Logout
+- **Data Pattern**: Fetch → Cache → Display → Update
+- **Form Pattern**: Validation → Submit → Response → Feedback
+- **Error Pattern**: Try → Catch → Log → Display
+- **API Pattern**: Request → Validate → Process → Respond
+- **Cache Pattern**: Check Cache → Fetch → Store → Serve
+
+## 📊 Project Progress Dashboard
+Overall Progress: 0% Complete
+- Setup & Configuration    □□□□□□□□□□   0%
+- Core Features           □□□□□□□□□□   0%
+- Advanced Features       □□□□□□□□□□   0%
+- Quality Assurance       □□□□□□□□□□   0%
+- Documentation          □□□□□□□□□□   0%
+- Deployment             □□□□□□□□□□   0%
+
+## 🛡️ Critical Standards
+
+### Technical Quality Standards
+| Category | Standards |
+|----------|-----------|
+| Type Safety | • No `any` types<br>• Explicit return types on functions<br>• Proper interface definitions |
+| Error Handling | • Try/catch blocks around async operations<br>• Graceful fallbacks<br>• Error logging |
+| Performance | • Proper component splitting<br>• Data fetching optimizations<br>• Bundle size monitoring |
+| Security | • Input validation<br>• Authentication checks<br>• CSRF protection |
+
+### Testing Coverage Requirements
+| Component Type | Minimum Coverage | Required Test Types |
+|----------------|------------------|---------------------|
+| UI Components | 80% | • Unit tests<br>• Snapshot tests |
+| Pages | 70% | • Loading states<br>• Error states<br>• Integration tests |
+| API Routes | 90% | • Input validation<br>• Auth checks<br>• Error handling |
+| Utility Functions | 95% | • Unit tests<br>• Edge cases |
+
+## 📝 Scratchpad
+
+### Current Tasks:
+[ ] Project structure setup
+[ ] Core feature implementation
+[ ] Testing framework setup
+
+### Notes:
+- Follow best practices for each feature
+- Maintain consistent code style
+- Document key decisions
+
+### Next Steps:
+1. Review architecture design
+2. Set up development environment
+3. Begin core feature implementation
+

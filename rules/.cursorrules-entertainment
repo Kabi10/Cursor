@@ -1,0 +1,204 @@
+# Cursor Entertainment Rules
+
+## 🗺️ Entertainment Website Architecture Map
+
+```
+┌─ Content Layer ────────────────────┐      ┌─ Media Layer ────────────┐
+│                                    │      │                          │
+│  ┌─ Page Components ───────────┐   │      │  ┌─ Media Delivery ────┐  │
+│  │ - Media Listings           │   │      │  │ - Video Player      │  │
+│  │ - Content Details          │   │      │  │ - Audio Player      │  │
+│  │ - Category Pages           │   │      │  │ - Image Galleries   │  │
+│  │ - User Profiles            │   │      │  │ - Streaming Service │  │
+│  └─────────────────────────────┘   │      │  └────────────────────┘  │
+│                                    │      │                          │
+│  ┌─ Client Components ──────────┐  │      │  ┌─ Media Storage ─────┐  │
+│  │ - Media Players             │◄─┼──────┼─►│ - Content Library    │  │
+│  │ - Recommendation Engine     │  │      │  │ - User Preferences   │  │
+│  │ - Rating/Review System      │  │      │  │ - Viewing History    │  │
+│  │ - Playlist Management       │  │      │  │ - Analytics Data     │  │
+│  └─────────────────────────────┘  │      │  └────────────────────┘  │
+│                                    │      │                          │
+└────────────────────────────────────┘      └──────────────────────────┘
+
+┌─ Entertainment Specific Concerns ─────────────────────────────────────┐
+│                                                                       │
+│  ┌─ User Experience ──┐  ┌─ Content Discovery ┐  ┌─ Monetization ──┐ │
+│  │ - Playback Quality │  │ - Recommendations  │  │ - Subscriptions │ │
+│  │ - Personalization  │  │ - Search/Filters   │  │ - Advertising   │ │
+│  │ - Watchlists       │  │ - Categories       │  │ - Pay-per-view  │ │
+│  │ - Cross-device     │  │ - Trending Content │  │ - Freemium      │ │
+│  └───────────────────┘  └──────────────────┘  └─────────────────┘ │
+│                                                                       │
+└───────────────────────────────────────────────────────────────────────┘
+```
+
+## ⚠️ MANDATORY PRE-IMPLEMENTATION CHECKLIST ⚠️
+STOP! Before writing ANY code or suggesting ANY changes:
+
+1. 🔍 SEARCH FIRST:
+   ```bash
+   # REQUIRED: Run these searches and document results
+   grep_search for functionality
+   file_search for similar files
+   list_dir in relevant directories
+   ```
+
+2. 📝 DOCUMENT FINDINGS:
+   ```markdown
+   ## Existing Files Found:
+   - [List all relevant files found with full paths]
+   - [Include file sizes and last modified dates if relevant]
+   
+   ## Existing Functionality:
+   - [Describe what already exists in detail]
+   - [Note any patterns or architectural approaches used]
+   
+   ## Gaps Identified:
+   - [List what's missing or needs enhancement]
+   - [Identify technical debt or issues in existing code]
+   
+   ## Implementation Decision Tree:
+   - Is there existing code that serves this purpose? [Yes/No]
+   - Can existing code be enhanced to meet requirements? [Yes/No]
+   - Is creating new code justified? [Yes/No, with reasoning]
+   
+   ## Proposed Approach:
+   - [ ] Enhance existing code at [file path]
+   - [ ] Create new files (requires detailed justification)
+   - [ ] Refactor existing code at [file path]
+   
+   ## Implementation Plan:
+   1. [First step with estimated effort]
+   2. [Second step with estimated effort]
+   3. [Additional steps as needed]
+   ```
+
+3. ✋ WAIT FOR APPROVAL:
+   - Present findings to user with clear options
+   - Get explicit approval for chosen approach
+   - Never proceed with new files if similar functionality exists
+   - Document approval in the implementation plan
+
+## 📋 Entertainment Platform Implementation Plan
+
+### Phase 1: Platform Setup
+[ ] 1.1. Initial Setup
+    [ ] Create Next.js project with TypeScript
+    [ ] Configure ESLint and Prettier
+    [ ] Set up project structure for entertainment platform
+    [ ] Initialize Git repository
+
+[ ] 1.2. Entertainment Dependencies
+    [ ] Install Shadcn UI for entertainment components
+    [ ] Set up media handling libraries
+    [ ] Install platform specific dependencies
+        [ ] Add video/audio players
+        [ ] Add streaming capabilities
+        [ ] Add recommendation engine
+
+[ ] 1.3. Content Architecture
+    [ ] Design media content models
+    [ ] Create category and genre schema
+    [ ] Set up user preference storage
+    [ ] Define content relationships
+
+### Phase 2: Core Entertainment Features
+[ ] 2.1. Media Library
+    [ ] Content listing pages
+    [ ] Media detail pages
+    [ ] Category/genre navigation
+    [ ] Search and filtering
+
+[ ] 2.2. Media Playback
+    [ ] Video player implementation
+    [ ] Audio player implementation
+    [ ] Playlist functionality
+    [ ] Playback controls and settings
+
+[ ] 2.3. User Experience
+    [ ] User profiles
+    [ ] Watchlist/favorites
+    [ ] Viewing history
+    [ ] Personalized recommendations
+
+### Phase 3: Engagement Features
+[ ] 3.1. Social Features
+    [ ] Rating and review system
+    [ ] Comments and discussions
+    [ ] Content sharing
+    [ ] User-generated playlists
+
+[ ] 3.2. Discovery Features
+    [ ] Recommendation algorithm
+    [ ] Trending content section
+    [ ] Similar content suggestions
+    [ ] Personalized homepage
+
+### Phase 4: Monetization and Analytics
+[ ] 4.1. Monetization
+    [ ] Subscription management
+    [ ] Payment processing
+    [ ] Ad integration
+    [ ] Premium content access
+
+[ ] 4.2. Analytics and Optimization
+    [ ] Viewing metrics
+    [ ] User behavior tracking
+    [ ] Content performance analysis
+    [ ] A/B testing framework
+
+## 🧠 Entertainment Pattern Recognition Map
+
+### Entertainment Feature Patterns
+- **Media Listing Pattern**: Thumbnail → Title → Metadata → Action Buttons
+- **Player Pattern**: Media → Controls → Quality Options → Related Content
+- **Category Pattern**: Header → Featured Content → Grid View → Load More
+- **User Profile Pattern**: Preferences → History → Watchlist → Recommendations
+- **Discovery Pattern**: Trending → Recommended → New Releases → Categories
+- **Playlist Pattern**: Create → Add Items → Arrange → Share
+
+## 📊 Project Progress Dashboard
+Overall Progress: 0% Complete
+- Setup & Configuration    □□□□□□□□□□   0%
+- Media Library           □□□□□□□□□□   0%
+- Playback Features       □□□□□□□□□□   0%
+- User Experience         □□□□□□□□□□   0%
+- Social Features         □□□□□□□□□□   0%
+- Monetization            □□□□□□□□□□   0%
+
+## 🛡️ Critical Standards
+
+### Technical Quality Standards
+| Category | Standards |
+|----------|-----------|
+| Type Safety | • No `any` types<br>• Explicit return types on functions<br>• Proper interface definitions |
+| Error Handling | • Try/catch blocks around async operations<br>• Graceful fallbacks<br>• Error logging |
+| Performance | • Proper component splitting<br>• Data fetching optimizations<br>• Bundle size monitoring |
+| Security | • Input validation<br>• Authentication checks<br>• CSRF protection |
+
+### Testing Coverage Requirements
+| Component Type | Minimum Coverage | Required Test Types |
+|----------------|------------------|---------------------|
+| UI Components | 80% | • Unit tests<br>• Snapshot tests |
+| Pages | 70% | • Loading states<br>• Error states<br>• Integration tests |
+| Media Players | 90% | • Playback<br>• Controls<br>• Error states |
+| Recommendation Engine | 95% | • Algorithm accuracy<br>• Performance<br>• Edge cases |
+
+## 📝 Scratchpad
+
+### Current Tasks:
+[ ] Entertainment platform architecture setup
+[ ] Media playback implementation
+[ ] Content organization system
+
+### Notes:
+- Focus on seamless playback experience
+- Ensure responsive design for all devices
+- Optimize media loading and streaming
+
+### Next Steps:
+1. Review entertainment platform requirements
+2. Set up development environment
+3. Begin core feature implementation
+

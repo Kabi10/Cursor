@@ -1,0 +1,204 @@
+# Cursor Education Rules
+
+## 🗺️ Educational Website Architecture Map
+
+```
+┌─ Learning Layer ────────────────────┐      ┌─ Admin Layer ────────────┐
+│                                     │      │                          │
+│  ┌─ Page Components ────────────┐   │      │  ┌─ Management ────────┐  │
+│  │ - Course Pages              │   │      │  │ - Course Creator    │  │
+│  │ - Lesson Modules            │   │      │  │ - User Management   │  │
+│  │ - Assessment Pages          │   │      │  │ - Content Library   │  │
+│  │ - Resource Libraries        │   │      │  │ - Analytics         │  │
+│  └──────────────────────────────┘   │      │  └────────────────────┘  │
+│                                     │      │                          │
+│  ┌─ Client Components ───────────┐  │      │  ┌─ Data Storage ──────┐  │
+│  │ - Interactive Elements       │◄─┼──────┼─►│ - Course Content    │  │
+│  │ - Progress Tracking          │  │      │  │ - User Progress     │  │
+│  │ - Quiz/Assessment System     │  │      │  │ - Assessment Data   │  │
+│  │ - Discussion Forums          │  │      │  │ - Learning Analytics│  │
+│  └──────────────────────────────┘  │      │  └────────────────────┘  │
+│                                     │      │                          │
+└─────────────────────────────────────┘      └──────────────────────────┘
+
+┌─ Education Specific Concerns ────────────────────────────────────────┐
+│                                                                      │
+│  ┌─ Learning Experience ┐  ┌─ Assessment ───────┐  ┌─ Engagement ──┐ │
+│  │ - Content Delivery   │  │ - Quiz System      │  │ - Gamification│ │
+│  │ - Learning Paths     │  │ - Grading          │  │ - Discussion  │ │
+│  │ - Accessibility      │  │ - Feedback         │  │ - Community   │ │
+│  │ - Multimedia         │  │ - Certification    │  │ - Motivation  │ │
+│  └────────────────────┘  └───────────────────┘  └────────────────┘ │
+│                                                                      │
+└──────────────────────────────────────────────────────────────────────┘
+```
+
+## ⚠️ MANDATORY PRE-IMPLEMENTATION CHECKLIST ⚠️
+STOP! Before writing ANY code or suggesting ANY changes:
+
+1. 🔍 SEARCH FIRST:
+   ```bash
+   # REQUIRED: Run these searches and document results
+   grep_search for functionality
+   file_search for similar files
+   list_dir in relevant directories
+   ```
+
+2. 📝 DOCUMENT FINDINGS:
+   ```markdown
+   ## Existing Files Found:
+   - [List all relevant files found with full paths]
+   - [Include file sizes and last modified dates if relevant]
+   
+   ## Existing Functionality:
+   - [Describe what already exists in detail]
+   - [Note any patterns or architectural approaches used]
+   
+   ## Gaps Identified:
+   - [List what's missing or needs enhancement]
+   - [Identify technical debt or issues in existing code]
+   
+   ## Implementation Decision Tree:
+   - Is there existing code that serves this purpose? [Yes/No]
+   - Can existing code be enhanced to meet requirements? [Yes/No]
+   - Is creating new code justified? [Yes/No, with reasoning]
+   
+   ## Proposed Approach:
+   - [ ] Enhance existing code at [file path]
+   - [ ] Create new files (requires detailed justification)
+   - [ ] Refactor existing code at [file path]
+   
+   ## Implementation Plan:
+   1. [First step with estimated effort]
+   2. [Second step with estimated effort]
+   3. [Additional steps as needed]
+   ```
+
+3. ✋ WAIT FOR APPROVAL:
+   - Present findings to user with clear options
+   - Get explicit approval for chosen approach
+   - Never proceed with new files if similar functionality exists
+   - Document approval in the implementation plan
+
+## 📋 Educational Platform Implementation Plan
+
+### Phase 1: Learning Platform Setup
+[ ] 1.1. Initial Setup
+    [ ] Create Next.js project with TypeScript
+    [ ] Configure ESLint and Prettier
+    [ ] Set up project structure for educational platform
+    [ ] Initialize Git repository
+
+[ ] 1.2. Educational Dependencies
+    [ ] Install Shadcn UI for educational components
+    [ ] Set up content management system
+    [ ] Install platform specific dependencies
+        [ ] Add interactive learning tools
+        [ ] Add assessment libraries
+        [ ] Add progress tracking system
+
+[ ] 1.3. Content Architecture
+    [ ] Design course and lesson models
+    [ ] Create assessment and quiz schema
+    [ ] Set up user progress tracking
+    [ ] Define learning path structures
+
+### Phase 2: Core Learning Features
+[ ] 2.1. Course Management
+    [ ] Course listing and discovery
+    [ ] Lesson module structure
+    [ ] Learning path progression
+    [ ] Resource libraries
+
+[ ] 2.2. Content Delivery
+    [ ] Lesson content display
+    [ ] Interactive elements
+    [ ] Multimedia integration
+    [ ] Accessibility features
+
+[ ] 2.3. Assessment System
+    [ ] Quiz and test creation
+    [ ] Automated grading
+    [ ] Feedback mechanisms
+    [ ] Progress tracking
+
+### Phase 3: User Engagement
+[ ] 3.1. Learning Experience
+    [ ] User dashboard
+    [ ] Progress visualization
+    [ ] Achievement system
+    [ ] Personalized recommendations
+
+[ ] 3.2. Community Features
+    [ ] Discussion forums
+    [ ] Peer collaboration tools
+    [ ] Q&A system
+    [ ] Study groups
+
+### Phase 4: Administration and Analytics
+[ ] 4.1. Admin Features
+    [ ] Course creation tools
+    [ ] User management
+    [ ] Content moderation
+    [ ] Reporting system
+
+[ ] 4.2. Learning Analytics
+    [ ] Student progress tracking
+    [ ] Performance analytics
+    [ ] Engagement metrics
+    [ ] Learning outcome assessment
+
+## 🧠 Educational Pattern Recognition Map
+
+### Education Feature Patterns
+- **Course Pattern**: Overview → Modules → Lessons → Assessments
+- **Lesson Pattern**: Objectives → Content → Practice → Assessment
+- **Quiz Pattern**: Instructions → Questions → Feedback → Results
+- **Progress Pattern**: Visualization → Milestones → Achievements → Next Steps
+- **Discussion Pattern**: Topic → Responses → Instructor Input → Resolution
+- **Resource Pattern**: Categories → Search → Preview → Download/Access
+
+## 📊 Project Progress Dashboard
+Overall Progress: 0% Complete
+- Setup & Configuration    □□□□□□□□□□   0%
+- Course Management       □□□□□□□□□□   0%
+- Content Delivery        □□□□□□□□□□   0%
+- Assessment System       □□□□□□□□□□   0%
+- User Engagement         □□□□□□□□□□   0%
+- Administration          □□□□□□□□□□   0%
+
+## 🛡️ Critical Standards
+
+### Technical Quality Standards
+| Category | Standards |
+|----------|-----------|
+| Type Safety | • No `any` types<br>• Explicit return types on functions<br>• Proper interface definitions |
+| Error Handling | • Try/catch blocks around async operations<br>• Graceful fallbacks<br>• Error logging |
+| Performance | • Proper component splitting<br>• Data fetching optimizations<br>• Bundle size monitoring |
+| Security | • Input validation<br>• Authentication checks<br>• CSRF protection |
+
+### Testing Coverage Requirements
+| Component Type | Minimum Coverage | Required Test Types |
+|----------------|------------------|---------------------|
+| UI Components | 80% | • Unit tests<br>• Snapshot tests |
+| Pages | 70% | • Loading states<br>• Error states<br>• Integration tests |
+| Assessment System | 90% | • Grading accuracy<br>• Edge cases<br>• Feedback logic |
+| Progress Tracking | 95% | • Data accuracy<br>• State transitions<br>• Persistence |
+
+## 📝 Scratchpad
+
+### Current Tasks:
+[ ] Educational platform architecture setup
+[ ] Course structure implementation
+[ ] Assessment system design
+
+### Notes:
+- Focus on learning experience and engagement
+- Ensure accessibility compliance
+- Implement robust progress tracking
+
+### Next Steps:
+1. Review educational platform requirements
+2. Set up development environment
+3. Begin core feature implementation
+

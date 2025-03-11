@@ -1,0 +1,204 @@
+# Cursor Social Media Rules
+
+## 🗺️ Social Media/Community Website Architecture Map
+
+```
+┌─ User Interface Layer ──────────────┐      ┌─ Backend Layer ────────────┐
+│                                     │      │                            │
+│  ┌─ Page Components ────────────┐   │      │  ┌─ API Routes ──────────┐  │
+│  │ - Feed/Timeline             │   │      │  │ - Auth API        │  │
+│  │ - Profile Pages             │   │      │  │ - Content API     │  │
+│  │ - Groups/Communities        │   │      │  │ - Social API      │  │
+│  │ - Notifications             │   │      │  │ - Analytics API   │  │
+│  └──────────────────────────────┘   │      │  └─────────────────┘  │
+│                                     │      │                            │
+│  ┌─ Client Components ───────────┐  │      │  ┌─ Data Storage ───────┐  │
+│  │ - Post Creator               │◄─┼──────┼─►│ - User Profiles   │  │
+│  │ - Comment Threads            │  │      │  │ - Posts/Content   │  │
+│  │ - Real-time Updates          │  │      │  │ - Interactions    │  │
+│  │ - Message Components         │  │      │  │ - Media Assets    │  │
+│  └──────────────────────────────┘  │      │  └─────────────────┘  │
+│                                     │      │                            │
+└─────────────────────────────────────┘      └────────────────────────────┘
+
+┌─ Social Media Specific Concerns ─────────────────────────────────────┐
+│                                                                      │
+│  ┌─ User Interactions ─┐  ┌─ Content Management ┐  ┌─ Community ───┐ │
+│  │ - Likes/Reactions   │  │ - Post Creation     │  │ - Media Uploads │ │
+│  │ - Comments          │  │ - Media Uploads     │  │ - Moderation    │ │
+│  │ - Sharing           │  │ - Content Discovery │  │ - Reporting     │ │
+│  │ - Following         │  │ - Feed Algorithms   │  │ - Governance    │ │
+│  └────────────────────┘  └────────────────────┘  └────────────────┘ │
+│                                                                      │
+└──────────────────────────────────────────────────────────────────────┘
+```
+
+## ⚠️ MANDATORY PRE-IMPLEMENTATION CHECKLIST ⚠️
+STOP! Before writing ANY code or suggesting ANY changes:
+
+1. 🔍 SEARCH FIRST:
+   ```bash
+   # REQUIRED: Run these searches and document results
+   grep_search for functionality
+   file_search for similar files
+   list_dir in relevant directories
+   ```
+
+2. 📝 DOCUMENT FINDINGS:
+   ```markdown
+   ## Existing Files Found:
+   - [List all relevant files found with full paths]
+   - [Include file sizes and last modified dates if relevant]
+   
+   ## Existing Functionality:
+   - [Describe what already exists in detail]
+   - [Note any patterns or architectural approaches used]
+   
+   ## Gaps Identified:
+   - [List what's missing or needs enhancement]
+   - [Identify technical debt or issues in existing code]
+   
+   ## Implementation Decision Tree:
+   - Is there existing code that serves this purpose? [Yes/No]
+   - Can existing code be enhanced to meet requirements? [Yes/No]
+   - Is creating new code justified? [Yes/No, with reasoning]
+   
+   ## Proposed Approach:
+   - [ ] Enhance existing code at [file path]
+   - [ ] Create new files (requires detailed justification)
+   - [ ] Refactor existing code at [file path]
+   
+   ## Implementation Plan:
+   1. [First step with estimated effort]
+   2. [Second step with estimated effort]
+   3. [Additional steps as needed]
+   ```
+
+3. ✋ WAIT FOR APPROVAL:
+   - Present findings to user with clear options
+   - Get explicit approval for chosen approach
+   - Never proceed with new files if similar functionality exists
+   - Document approval in the implementation plan
+
+## 📋 Social Media Implementation Plan
+
+### Phase 1: Platform Setup
+[ ] 1.1. Initial Setup
+    [ ] Create Next.js project with TypeScript
+    [ ] Configure ESLint and Prettier
+    [ ] Set up project structure for social platform
+    [ ] Initialize Git repository
+
+[ ] 1.2. Social Platform Dependencies
+    [ ] Install Shadcn UI for social components
+    [ ] Set up real-time functionalities
+    [ ] Install platform specific dependencies
+        [ ] Add WebSocket libraries
+        [ ] Add media processing tools
+        [ ] Add authentication solutions
+
+[ ] 1.3. Data Models
+    [ ] Design user profile model
+    [ ] Create post/content schema
+    [ ] Set up interaction data models
+    [ ] Define community/group structures
+
+### Phase 2: Core Social Features
+[ ] 2.1. User Authentication
+    [ ] User registration and login
+    [ ] Profile creation and customization
+    [ ] Follow/connection system
+    [ ] User discovery
+
+[ ] 2.2. Content Creation
+    [ ] Post creation interface
+    [ ] Media upload and processing
+    [ ] Rich text formatting
+    [ ] Tagging and mentions
+
+[ ] 2.3. Feed and Timeline
+    [ ] Content feed algorithms
+    [ ] Real-time updates
+    [ ] Infinite scrolling
+    [ ] Content filtering
+
+### Phase 3: Interaction Features
+[ ] 3.1. Social Interactions
+    [ ] Likes/reactions system
+    [ ] Comment threads with nesting
+    [ ] Content sharing mechanisms
+    [ ] Notification system
+
+[ ] 3.2. Messaging
+    [ ] Direct messaging interface
+    [ ] Group conversations
+    [ ] Media sharing in messages
+    [ ] Read receipts and typing indicators
+
+### Phase 4: Community Management
+[ ] 4.1. Groups and Communities
+    [ ] Group creation and management
+    [ ] Member roles and permissions
+    [ ] Group content creation
+    [ ] Group discovery
+
+[ ] 4.2. Moderation Tools
+    [ ] Content moderation queue
+    [ ] Reporting system
+    [ ] User sanctions
+    [ ] Community guidelines enforcement
+
+## 🧠 Social Media Pattern Recognition Map
+
+### Social Feature Patterns
+- **Feed Pattern**: Algorithm → Content Cards → Interaction Controls → Load More
+- **Profile Pattern**: Header → Bio → Activity Feed → Connection Controls
+- **Post Pattern**: Author → Content → Media → Interactions → Comments
+- **Comment Pattern**: Nested Threading → Reactions → Reply Controls → Moderation
+- **Group Pattern**: Header → Description → Member List → Content Feed
+- **Notification Pattern**: Activity Type → Actor → Object → Timestamp → Action
+
+## 📊 Project Progress Dashboard
+Overall Progress: 0% Complete
+- Setup & Configuration    □□□□□□□□□□   0%
+- Core Features           □□□□□□□□□□   0%
+- Interaction Features    □□□□□□□□□□   0%
+- Community Features      □□□□□□□□□□   0%
+- Moderation Tools        □□□□□□□□□□   0%
+- Testing & Deployment    □□□□□□□□□□   0%
+
+## 🛡️ Critical Standards
+
+### Technical Quality Standards
+| Category | Standards |
+|----------|-----------|
+| Type Safety | • No `any` types<br>• Explicit return types on functions<br>• Proper interface definitions |
+| Error Handling | • Try/catch blocks around async operations<br>• Graceful fallbacks<br>• Error logging |
+| Performance | • Proper component splitting<br>• Data fetching optimizations<br>• Bundle size monitoring |
+| Security | • Input validation<br>• Authentication checks<br>• CSRF protection |
+
+### Testing Coverage Requirements
+| Component Type | Minimum Coverage | Required Test Types |
+|----------------|------------------|---------------------|
+| UI Components | 80% | • Unit tests<br>• Snapshot tests |
+| Pages | 70% | • Loading states<br>• Error states<br>• Integration tests |
+| API Routes | 90% | • Input validation<br>• Auth checks<br>• Error handling |
+| Real-time Features | 95% | • Connection handling<br>• State sync<br>• Error recovery |
+
+## 📝 Scratchpad
+
+### Current Tasks:
+[ ] Platform architecture setup
+[ ] Core social features implementation
+[ ] Real-time functionality integration
+
+### Notes:
+- Focus on user experience and engagement
+- Ensure scalable architecture
+- Implement robust moderation tools
+
+### Next Steps:
+1. Review social platform requirements
+2. Set up development environment
+3. Begin core feature implementation
+

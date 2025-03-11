@@ -1,16 +1,6 @@
 # Ignore Master files
-Master.md
-Master-Complete.md
 
-# Ignore expanded directory
-rules/expanded/
+cursor-master-rules.md
 
-# Ignore OS files
-.DS_Store
-Thumbs.db
 
-# Ignore editor files
-.vscode/
-.idea/
-*.swp
-*.swo 
+#
