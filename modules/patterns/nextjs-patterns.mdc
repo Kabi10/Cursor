@@ -1,0 +1,86 @@
+# Next.js Patterns
+
+## 🔄 Component Patterns
+
+1. **Server Components (Default)**
+   ```tsx
+   // ✅ Correct: Default to Server Components
+   export default async function Page({ params }) {
+     const data = await getData();
+     return <Component data={data} />;
+   }
+   ```
+
+2. **Client Components (When Needed)**
+   ```tsx
+   // ✅ Correct: Mark as client when needed
+   'use client';
+   
+   export function InteractiveComponent() {
+     const [state, setState] = useState();
+     return <div onClick={() => setState(!state)}>{state}</div>;
+   }
+   ```
+
+## 📡 Data Fetching
+
+1. **Server-Side Data Fetching**
+   ```tsx
+   // ✅ Correct: Fetch in Server Components
+   async function getData() {
+     const res = await fetch('https://api.example.com/data', {
+       next: { revalidate: 3600 }
+     });
+     return res.json();
+   }
+   ```
+
+2. **Error Handling**
+   ```tsx
+   // ✅ Correct: Use error.tsx
+   export default function Error({
+     error,
+     reset,
+   }: {
+     error: Error;
+     reset: () => void;
+   }) {
+     return (
+       <div>
+         <h2>Something went wrong!</h2>
+         <button onClick={() => reset()}>Try again</button>
+       </div>
+     );
+   }
+   ```
+
+## Examples
+
+<example>
+# ✅ Valid Next.js Implementation
+- Server Components by default
+- Client Components marked explicitly
+- Data fetching at the server level
+- Proper error boundaries
+- Loading states with Suspense
+</example>
+
+<example type="invalid">
+# ❌ Invalid Next.js Implementation
+- Everything marked as 'use client'
+- Client-side data fetching everywhere
+- No error handling
+- Missing loading states
+</example>
+
+## Critical Rules
+- Default to Server Components
+- Use 'use client' only when necessary
+- Implement proper error boundaries
+- Include loading states
+- Follow Next.js file conventions
+- Use metadata API for SEO
+description:
+globs:
+alwaysApply: false
+---

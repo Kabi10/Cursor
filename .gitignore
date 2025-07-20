@@ -1,6 +1,32 @@
-# Ignore Master files
+# IDE and Editor Files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+.vs/
+*.swp
+*~
 
-cursor-master-rules.md
+# OS Files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Build and Test Artifacts
+node_modules/
+dist/
+build/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Personal Cursor Rules
+.cursor/rules/my-rules/
+.cursor/rules/combined-rules.mdc
+
+# Keep these files
+!.cursor/rules/README.md
 
 
 #

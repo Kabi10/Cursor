@@ -1,0 +1,75 @@
+---
+description: Combined rules from modules: core/checklist
+globs: 
+alwaysApply: true
+---
+
+# Combined Cursor Rules
+Generated from selected modules on 2025-07-19 18:58:32
+
+
+## Module: core/checklist
+# Pre-Implementation Checklist
+
+## 🔍 MANDATORY: Search First
+Before making ANY changes or implementing ANY new features:
+
+1. **Search Existing Code**
+   ```bash
+   # Document ALL search results
+   grep_search "[feature keyword]"    # Search for related functionality
+   file_search "[filename pattern]"   # Search for similar files
+   list_dir "[relevant directory]"    # List contents of directories
+   ```
+
+2. **Document Findings**
+   ```markdown
+   ## Existing Files Found:
+   - [List all relevant files with full paths]
+   - [Include file sizes and last modified dates]
+   
+   ## Existing Functionality:
+   - [Describe what already exists]
+   - [Note patterns and approaches used]
+   
+   ## Gaps Identified:
+   - [List what's missing]
+   - [Note technical debt]
+   
+   ## Implementation Decision Tree:
+   - Is there existing code that serves this purpose? [Yes/No]
+   - Can existing code be enhanced? [Yes/No]
+   - Is creating new code justified? [Yes/No + reasoning]
+   ```
+
+3. **✋ Wait for Approval**
+   - Present findings with clear options
+   - Get explicit approval for approach
+   - Never proceed with new files if similar exists
+   - Document approval in implementation plan
+
+## Examples
+
+<example>
+# ✅ Valid Implementation Process
+1. Searched codebase for "auth" functionality
+2. Found existing auth utilities in `src/utils/auth.ts`
+3. Documented current capabilities and gaps
+4. Proposed enhancing existing code
+5. Got approval before proceeding
+</example>
+
+<example type="invalid">
+# ❌ Invalid Implementation Process
+1. Created new auth service without searching
+2. Duplicated existing functionality
+3. Introduced inconsistent patterns
+4. No documentation of decision process
+</example>
+
+## Critical Rules
+- NEVER skip the search phase
+- ALWAYS document findings before proceeding
+- Get explicit approval for approach
+- Use existing code when possible
+- Document decisions and reasoning
